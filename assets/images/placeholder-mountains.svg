@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Placeholder mountain illustration">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bae6fd"/><stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#sky2)"/>
+  <circle cx="260" cy="170" r="58" fill="#fffbeb"/>
+  <path d="M0 620 L260 300 L420 470 L560 330 L760 620Z" fill="#334155"/>
+  <path d="M260 300 L200 375 L245 365 L280 400 L330 355 L420 470Z" fill="#f8fafc"/>
+  <path d="M520 620 L740 340 L900 500 L1010 400 L1200 620Z" fill="#475569"/>
+  <path d="M740 340 L690 410 L730 400 L760 430 L800 395Z" fill="#f1f5f9"/>
+  <rect y="620" width="1200" height="130" fill="#166534"/>
+  <text x="600" y="710" font-family="system-ui, sans-serif" font-size="30" fill="#bbf7d0" text-anchor="middle" opacity=".85">replace me · assets/images/</text>
+</svg>

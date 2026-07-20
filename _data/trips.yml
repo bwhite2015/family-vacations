@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# TRIP REGISTRY
+#
+# One entry per vacation. The key is the "trip" value you put in a post's
+# front matter:
+#
+#     trip: southwest-2026
+#
+# Only "name" is required. The rest is optional flavor for the trip page.
+# ---------------------------------------------------------------------------
+
+southwest-2026:
+  name: Southwest Road Trip 2026
+  dates: June 2026
+  blurb: Two weeks, five parks, and an unreasonable amount of red dust.
+  color: "#c2410c"
+
+colorado-2025:
+  name: Colorado Summer 2025
+  dates: July 2025
+  blurb: Mountain air, cold lakes, and the world's slowest hike.
+  color: "#0e7490"

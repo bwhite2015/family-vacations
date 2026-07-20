@@ -1,0 +1,56 @@
+{%- comment -%}
+  A single entry in a blog listing. Expects: post=<a post object>
+
+  The card carries data-* attributes for every location and trip it belongs to
+  so the client-side filter on the listing pages can match against them without
+  a second data file.
+{%- endcomment -%}
+{%- include scan-locations.html html=post.content extra=post.locations -%}
+{%- assign card_loc_ids = scanned_locations | split: "," -%}
+{%- assign card_trip = site.data.trips[post.trip] -%}
+{%- capture card_loc_names -%}
+  {%- for id in card_loc_ids -%}{{ site.data.locations[id].name }} {% endfor -%}
+{%- endcapture -%}
+
+<article class="card"
+         data-trip="{{ post.trip }}"
+         data-locations="{{ scanned_locations }}"
+         data-search="{{ post.title | append: ' ' | append: card_loc_names | append: ' ' | append: card_trip.name | append: ' ' | append: post.excerpt | strip_html | normalize_whitespace | downcase | strip | escape }}">
+
+  <a class="card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- if post.image %}
+    <img src="{{ post.image | relative_url | escape }}" alt="" loading="lazy">
+    {%- else %}
+    <span class="card__thumb-fallback">📷</span>
+    {%- endif %}
+  </a>
+
+  <div class="card__body">
+    <p class="card__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </p>
+
+    <h2 class="card__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+
+    <p class="card__excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 165 }}</p>
+
+    <div class="tag-row tag-row--sm">
+      {%- if card_trip %}
+      <a class="tag tag--trip" href="{{ '/?trip=' | append: post.trip | relative_url }}"
+         {% if card_trip.color %}style="--tag-color: {{ card_trip.color }}"{% endif %}>
+        <span class="tag__icon" aria-hidden="true">🧳</span>{{ card_trip.name }}
+      </a>
+      {%- endif %}
+      {%- for id in card_loc_ids %}
+        {%- assign loc = site.data.locations[id] %}
+        {%- if loc %}
+      <a class="tag tag--loc" href="{{ '/?loc=' | append: id | relative_url }}">
+        <span class="tag__icon" aria-hidden="true">📍</span>{{ loc.name }}
+      </a>
+        {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</article>

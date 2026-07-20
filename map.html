@@ -1,0 +1,66 @@
+---
+layout: default
+title: Map
+permalink: /map/
+map: true
+---
+
+<div class="wrap page">
+  <header class="page__header">
+    <h1>Where we've been</h1>
+    <p class="page__subtitle">Every place tagged across every entry. Click a pin to see what we wrote there.</p>
+  </header>
+
+  <div class="map-filters" role="group" aria-label="Filter map by trip">
+    <button class="chip is-active" data-map-filter="all">All trips</button>
+    {%- assign used_trips = site.posts | map: "trip" | compact | uniq %}
+    {%- for slug in used_trips %}
+      {%- assign t = site.data.trips[slug] %}
+      {%- if t %}
+    <button class="chip chip--trip" data-map-filter="{{ slug }}"
+            {% if t.color %}style="--tag-color: {{ t.color }}"{% endif %}>🧳 {{ t.name }}</button>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="map" class="map"></div>
+  <p class="map__hint">Drag to pan, scroll to zoom. Pins cluster by place, not by entry.</p>
+</div>
+
+{%- comment -%}
+  Build the pin data as JSON, inline. For each registered location we gather
+  every post that tags it (in body text or front matter). Locations with no
+  posts are skipped so the map only shows places we've actually written about.
+{%- endcomment -%}
+<script type="application/json" id="map-data">
+[
+{%- assign outer_sep = "" -%}
+{%- for entry in site.data.locations -%}
+  {%- assign id = entry[0] -%}
+  {%- assign loc = entry[1] -%}
+
+  {%- capture post_json -%}
+    {%- assign inner_sep = "" -%}
+    {%- for post in site.posts -%}
+      {%- include scan-locations.html html=post.content extra=post.locations -%}
+      {%- assign probe = "," | append: id | append: "," -%}
+      {%- assign haystack = "," | append: scanned_locations | append: "," -%}
+      {%- if haystack contains probe -%}
+        {{- inner_sep -}}
+        {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%b %-d, %Y" | jsonify }},"trip":{{ post.trip | default: "" | jsonify }},"image":{% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}}
+        {%- assign inner_sep = "," -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign post_json = post_json | strip -%}
+
+  {%- if post_json != "" and loc.lat and loc.lng -%}
+    {{- outer_sep -}}
+    {"id":{{ id | jsonify }},"name":{{ loc.name | jsonify }},"region":{{ loc.region | default: "" | jsonify }},"lat":{{ loc.lat }},"lng":{{ loc.lng }},"posts":[{{ post_json }}]}
+    {%- assign outer_sep = "," -%}
+  {%- endif -%}
+{%- endfor -%}
+]
+</script>

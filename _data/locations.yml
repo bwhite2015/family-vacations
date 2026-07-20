@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# LOCATION REGISTRY
+#
+# Every location you tag in a blog post must have an entry here. The key (the
+# bit before the colon) is the "id" you use in posts:
+#
+#     {% include loc.html id="zion" %}
+#
+# To add a new one, copy a block and edit it. To get lat/lng: open Google Maps,
+# right-click the spot, and click the numbers at the top of the menu to copy
+# them. First number is lat, second is lng.
+# ---------------------------------------------------------------------------
+
+zion:
+  name: Zion National Park
+  region: Utah, USA
+  lat: 37.2982
+  lng: -113.0263
+
+moab:
+  name: Moab
+  region: Utah, USA
+  lat: 38.5733
+  lng: -109.5498
+
+arches:
+  name: Arches National Park
+  region: Utah, USA
+  lat: 38.7331
+  lng: -109.5925
+
+grand-canyon:
+  name: Grand Canyon South Rim
+  region: Arizona, USA
+  lat: 36.0544
+  lng: -112.1401
+
+santa-fe:
+  name: Santa Fe
+  region: New Mexico, USA
+  lat: 35.6870
+  lng: -105.9378
+
+estes-park:
+  name: Estes Park
+  region: Colorado, USA
+  lat: 40.3772
+  lng: -105.5217

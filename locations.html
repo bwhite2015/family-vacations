@@ -1,0 +1,41 @@
+---
+layout: page
+title: Places
+subtitle: Every spot we've tagged, and how many times it turned up.
+permalink: /locations/
+---
+
+{%- comment -%}
+  Count posts per location by scanning each post's body once and tallying.
+{%- endcomment -%}
+{%- assign tally = "" -%}
+{%- for post in site.posts -%}
+  {%- include scan-locations.html html=post.content extra=post.locations -%}
+  {%- assign tally = tally | append: "," | append: scanned_locations -%}
+{%- endfor -%}
+{%- assign tally_list = tally | split: "," -%}
+
+<div class="dir-grid">
+{%- for entry in site.data.locations -%}
+  {%- assign id = entry[0] -%}
+  {%- assign loc = entry[1] -%}
+  {%- assign hits = 0 -%}
+  {%- for t in tally_list -%}
+    {%- if t == id -%}{%- assign hits = hits | plus: 1 -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if hits > 0 %}
+  <a class="dir-card" href="{{ '/?loc=' | append: id | relative_url }}">
+    <span class="dir-card__icon" aria-hidden="true">📍</span>
+    <span class="dir-card__name">{{ loc.name }}</span>
+    {%- if loc.region %}<span class="dir-card__sub">{{ loc.region }}</span>{% endif %}
+    <span class="dir-card__count">{{ hits }} {% if hits == 1 %}entry{% else %}entries{% endif %}</span>
+  </a>
+  {%- endif -%}
+{%- endfor -%}
+</div>
+
+<p class="page__note">
+  Places are pulled straight from the words in each entry — tag one with
+  <code>{% raw %}{% include loc.html id="…" %}{% endraw %}</code> and it shows up here,
+  in the entry header, and on the <a href="{{ '/map/' | relative_url }}">map</a>.
+</p>

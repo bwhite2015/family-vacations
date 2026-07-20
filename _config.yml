@@ -1,0 +1,46 @@
+title: Our Family Vacations
+description: Travel stories, photos, and pins on a map.
+author: The White Family
+
+# ---------------------------------------------------------------------------
+# URL SETTINGS  -- read this before your first deploy
+#
+# If your repo is named  <username>.github.io  then leave baseurl blank:
+#     baseurl: ""
+#     url: "https://<username>.github.io"
+#
+# If your repo is named anything else (e.g. "vacations"), you MUST set:
+#     baseurl: "/vacations"
+#     url: "https://<username>.github.io"
+# ---------------------------------------------------------------------------
+baseurl: "Family_Vacations_Site"
+url: "https://bwhite2015.github.io//Family_Vacations_Site/"
+
+timezone: America/Denver
+
+# Posts dated in the future still get published. Important because you may
+# back-date or forward-date entries by hand.
+future: true
+
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - WRITING-POSTS.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

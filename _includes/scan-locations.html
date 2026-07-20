@@ -1,0 +1,43 @@
+{%- comment -%}
+  Extracts every location id tagged in a chunk of rendered post HTML.
+
+  Usage:
+      {% include scan-locations.html html=post.content %}
+      {{ scanned_locations }}   -> "zion,moab"  (comma separated, deduped,
+                                                 in order of first appearance)
+
+  This is how body-text tags become header tags and map pins without needing a
+  Jekyll plugin (GitHub Pages runs Jekyll in safe mode, so plugins are out).
+
+  Any front-matter "locations:" list is merged in as well, so a post can also
+  declare a location it never mentions by name in the prose.
+{%- endcomment -%}
+{%- assign scanned_locations = "" -%}
+
+{%- if include.extra -%}
+  {%- for id in include.extra -%}
+    {%- assign probe = "," | append: id | append: "," -%}
+    {%- assign haystack = "," | append: scanned_locations | append: "," -%}
+    {%- unless haystack contains probe -%}
+      {%- if scanned_locations == "" -%}
+        {%- assign scanned_locations = id -%}
+      {%- else -%}
+        {%- assign scanned_locations = scanned_locations | append: "," | append: id -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- assign chunks = include.html | split: 'data-loc="' -%}
+{%- for chunk in chunks offset:1 -%}
+  {%- assign id = chunk | split: '"' | first -%}
+  {%- assign probe = "," | append: id | append: "," -%}
+  {%- assign haystack = "," | append: scanned_locations | append: "," -%}
+  {%- unless haystack contains probe -%}
+    {%- if scanned_locations == "" -%}
+      {%- assign scanned_locations = id -%}
+    {%- else -%}
+      {%- assign scanned_locations = scanned_locations | append: "," | append: id -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}

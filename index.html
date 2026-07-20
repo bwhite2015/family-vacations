@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="wrap">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  {%- comment -%}
+    Collect every location and trip actually used by at least one post, so the
+    filter bar never offers a dead-end chip.
+  {%- endcomment -%}
+  {%- assign all_used = "" -%}
+  {%- for post in site.posts -%}
+    {%- include scan-locations.html html=post.content extra=post.locations -%}
+    {%- assign all_used = all_used | append: "," | append: scanned_locations -%}
+  {%- endfor -%}
+  {%- assign used_ids = all_used | split: "," | uniq | sort -%}
+  {%- assign used_trips = site.posts | map: "trip" | compact | uniq -%}
+
+  <section class="filters" aria-label="Filter entries">
+    <div class="filters__search">
+      <input type="search" id="q" placeholder="Search entries, places, trips…"
+             autocomplete="off" aria-label="Search entries">
+    </div>
+
+    <div class="filters__chips" role="group" aria-label="Filter by trip or place">
+      <button class="chip is-active" data-filter="all">All</button>
+      {%- for slug in used_trips %}
+        {%- assign t = site.data.trips[slug] %}
+        {%- if t %}
+      <button class="chip chip--trip" data-filter="trip" data-value="{{ slug }}"
+              {% if t.color %}style="--tag-color: {{ t.color }}"{% endif %}>🧳 {{ t.name }}</button>
+        {%- endif %}
+      {%- endfor %}
+      {%- for id in used_ids %}
+        {%- assign loc = site.data.locations[id] %}
+        {%- if loc %}
+      <button class="chip chip--loc" data-filter="loc" data-value="{{ id }}">📍 {{ loc.name }}</button>
+        {%- endif %}
+      {%- endfor %}
+    </div>
+
+    <p class="filters__count" id="result-count" aria-live="polite"></p>
+  </section>
+
+  <div class="card-grid" id="post-list">
+    {%- for post in site.posts %}
+      {%- include post-card.html post=post %}
+    {%- endfor %}
+  </div>
+
+  <p class="empty-state" id="empty-state" hidden>
+    No entries match that. <button class="linkish" data-clear>Clear filters</button>
+  </p>
+
+  {%- if site.posts.size == 0 %}
+  <div class="empty-state">
+    <p>No entries yet. Add your first Markdown file to <code>_posts/</code> to get started.</p>
+  </div>
+  {%- endif %}
+
+</div>

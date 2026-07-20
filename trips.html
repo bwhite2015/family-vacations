@@ -1,0 +1,62 @@
+---
+layout: page
+title: Trips
+subtitle: Entries grouped by vacation.
+permalink: /trips/
+---
+
+<div class="trip-list">
+{%- for entry in site.data.trips -%}
+  {%- assign slug = entry[0] -%}
+  {%- assign trip = entry[1] -%}
+  {%- assign trip_posts = site.posts | where: "trip", slug -%}
+  {%- if trip_posts.size > 0 %}
+  <section class="trip" {% if trip.color %}style="--tag-color: {{ trip.color }}"{% endif %}>
+    <header class="trip__header">
+      <h2 class="trip__name">
+        <a href="{{ '/?trip=' | append: slug | relative_url }}">{{ trip.name }}</a>
+      </h2>
+      <p class="trip__meta">
+        {%- if trip.dates %}{{ trip.dates }} · {% endif -%}
+        {{ trip_posts.size }} {% if trip_posts.size == 1 %}entry{% else %}entries{% endif %}
+      </p>
+      {%- if trip.blurb %}<p class="trip__blurb">{{ trip.blurb }}</p>{% endif %}
+    </header>
+
+    <ol class="trip__posts">
+      {%- for post in trip_posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          {%- if post.image %}
+          <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+          {%- else %}
+          <span class="trip__posts-fallback" aria-hidden="true">📷</span>
+          {%- endif %}
+          <span class="trip__posts-text">
+            <strong>{{ post.title }}</strong>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif -%}
+{%- endfor -%}
+</div>
+
+{%- assign untripped = site.posts | where_exp: "p", "p.trip == nil" -%}
+{%- if untripped.size > 0 %}
+<section class="trip trip--loose">
+  <header class="trip__header">
+    <h2 class="trip__name">Not filed under a trip</h2>
+    <p class="trip__meta">{{ untripped.size }} {% if untripped.size == 1 %}entry{% else %}entries{% endif %}</p>
+  </header>
+  <ol class="trip__posts">
+    {%- for post in untripped %}
+    <li><a href="{{ post.url | relative_url }}"><span class="trip__posts-text"><strong>{{ post.title }}</strong>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></span></a></li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endif %}

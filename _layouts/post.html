@@ -1,0 +1,95 @@
+---
+layout: default
+---
+{%- comment -%}
+  Scan the rendered body for {% include loc.html %} tags, then merge in any
+  extra ids listed in front matter. Result lands in {{ scanned_locations }}.
+{%- endcomment -%}
+{%- include scan-locations.html html=content extra=page.locations -%}
+{%- assign loc_ids = scanned_locations | split: "," -%}
+{%- assign trip = site.data.trips[page.trip] -%}
+
+<article class="post wrap"
+         data-trip="{{ page.trip }}"
+         data-locations="{{ scanned_locations }}">
+
+  <header class="post__header">
+    <h1 class="post__title">{{ page.title }}</h1>
+
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }} at {{ page.date | date: "%-I:%M %p" }}
+      </time>
+      {%- if page.author %} · {{ page.author }}{% endif %}
+    </p>
+
+    {%- if trip or loc_ids.size > 0 %}
+    <div class="tag-row">
+      {%- if trip %}
+      <a class="tag tag--trip" href="{{ '/?trip=' | append: page.trip | relative_url }}"
+         {% if trip.color %}style="--tag-color: {{ trip.color }}"{% endif %}>
+        <span class="tag__icon" aria-hidden="true">🧳</span>{{ trip.name }}
+      </a>
+      {%- endif %}
+      {%- for id in loc_ids %}
+        {%- assign loc = site.data.locations[id] %}
+        {%- if loc %}
+      <a class="tag tag--loc" href="{{ '/?loc=' | append: id | relative_url }}">
+        <span class="tag__icon" aria-hidden="true">📍</span>{{ loc.name }}
+      </a>
+        {%- endif %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </header>
+
+  {%- if page.image %}
+  <figure class="post__hero">
+    <img src="{{ page.image | relative_url | escape }}" alt="{{ page.image_alt | default: page.title | escape }}">
+    {%- if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+  </figure>
+  {%- endif %}
+
+  <div class="post__body">
+    {{ content }}
+  </div>
+
+  {%- if page.gallery %}
+  <section class="gallery">
+    <h2>Photos</h2>
+    <div class="gallery__grid">
+      {%- for shot in page.gallery %}
+      <figure>
+        <a href="{{ shot.src | relative_url }}">
+          <img src="{{ shot.src | relative_url }}" alt="{{ shot.alt | default: '' }}" loading="lazy">
+        </a>
+        {%- if shot.caption %}<figcaption>{{ shot.caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if loc_ids.size > 0 %}
+  <section class="post__map-note">
+    <p>
+      This entry is pinned on the
+      <a href="{{ '/map/' | relative_url }}">trip map</a>
+      {% if loc_ids.size == 1 %}at one stop{% else %}across {{ loc_ids.size }} stops{% endif %}.
+    </p>
+  </section>
+  {%- endif %}
+
+  <nav class="post__nav">
+    {%- if page.previous %}
+    <a class="post__nav-prev" href="{{ page.previous.url | relative_url }}">
+      <span>Previous</span>{{ page.previous.title }}
+    </a>
+    {%- endif %}
+    {%- if page.next %}
+    <a class="post__nav-next" href="{{ page.next.url | relative_url }}">
+      <span>Next</span>{{ page.next.title }}
+    </a>
+    {%- endif %}
+  </nav>
+</article>

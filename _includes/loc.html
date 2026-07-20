@@ -1,0 +1,19 @@
+{%- comment -%}
+  Inline location tag. Use inside a post body:
+
+      We spent the morning in {% include loc.html id="zion" %}.
+
+  Renders a link to that location's page and, critically, stamps
+  data-loc="<id>" into the HTML. Layouts scan for that attribute to build the
+  header tag list and the map, so the body text is the single source of truth.
+
+  Optional: text="..." to override the displayed words.
+
+      Then on to {% include loc.html id="moab" text="the town" %}.
+{%- endcomment -%}
+{%- assign loc = site.data.locations[include.id] -%}
+{%- if loc -%}
+<a class="loc-tag" data-loc="{{ include.id }}" href="{{ '/?loc=' | append: include.id | relative_url }}" title="{{ loc.name | escape }}{% if loc.region %} — {{ loc.region | escape }}{% endif %}">{% if include.text %}{{ include.text }}{% else %}{{ loc.name }}{% endif %}</a>
+{%- else -%}
+<span class="loc-tag loc-tag--missing" title="No entry for &quot;{{ include.id }}&quot; in _data/locations.yml">{{ include.text | default: include.id }}</span>
+{%- endif -%}
