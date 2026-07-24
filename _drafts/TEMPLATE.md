@@ -68,9 +68,12 @@ Then we drove out to {% include loc.html id="arches" text="the park" %}.
 
 > A quote or an aside looks like this.
 
-To put a photo in the middle of the text:
+To put a photo in the middle of the text, put `{{ site.baseurl }}` in front of
+the path (unlike the `image:` and `gallery:` fields above, plain text in the
+body doesn't get that added automatically — skip it and the photo shows up
+broken on the live site):
 
-![Description of the photo](/assets/images/your-photo.jpg)
+![Description of the photo]({{ site.baseurl }}/assets/images/your-photo.jpg)
 
 - Bullet lists
 - Work fine too

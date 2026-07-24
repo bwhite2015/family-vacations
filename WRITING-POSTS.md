@@ -194,11 +194,16 @@ gallery:
     alt: View from the top
 ```
 
-Or drop one into the middle of the text:
+Or drop one into the middle of the text. Inline photos need `{{ site.baseurl }}`
+in front of the path (the `image:` and `gallery:` fields above don't — the site
+adds that part for you automatically there, but not inside the text you write):
 
 ```markdown
-![The view from the pass](/assets/images/pass.jpg)
+![The view from the pass]({{ site.baseurl }}/assets/images/pass.jpg)
 ```
+
+If you forget the `{{ site.baseurl }}` part, the photo will show up as a broken
+image icon on the live site instead of the picture.
 
 ---
 
