@@ -7,7 +7,7 @@ git commands. It works fine on a phone or tablet, though a tablet is easier.
 
 ## The short version
 
-1. Upload your photos to `assets/images/`
+1. Upload your photos to `assets/images/<trip-key>/`
 2. Create a file in `_posts/` named `YYYY-MM-DD-short-title.md`
 3. Paste the template, fill it in, commit
 4. Wait ~1 minute for the site to rebuild
@@ -16,15 +16,37 @@ git commands. It works fine on a phone or tablet, though a tablet is easier.
 
 ## 1. Upload the photos first
 
-Go to the `assets/images/` folder in the repo → **Add file** → **Upload files**.
-Drag your photos in (or tap to pick them on a phone), then **Commit changes**.
+Photos live in a subfolder per vacation, named after that trip's key from
+`_data/trips.yml` — e.g. all Kelleys Island photos go in
+`assets/images/kelleys-island-2026/`. This keeps things sane once you've got a
+few hundred photos across several trips instead of one giant folder.
 
-Name them something you'll recognize later — `moab-sunset.jpg` beats `IMG_4417.jpg`.
+**If the trip's folder already exists:** navigate to it in the repo →
+**Add file** → **Upload files**. Drag your photos in (or tap to pick them on a
+phone), then **Commit changes**.
+
+**If this is a brand-new trip with no folder yet:** GitHub won't let you create
+an empty folder directly, but typing a path with a slash in it makes one for
+you — same trick as `_posts/` filenames below. Go to `assets/images/` →
+**Add file** → **Create new file**, and in the filename box type:
+
+```
+maine-2027/.gitkeep
+```
+
+Commit that (an empty placeholder file is fine — it just makes the folder
+exist). Now navigate into the new `maine-2027` folder and use **Upload files**
+for the actual photos.
+
+Name your photo files something you'll recognize later — `moab-sunset.jpg`
+beats `IMG_4417.jpg`.
 
 > **Resize before uploading if you can.** Photos straight off a phone are often
 > 5–10 MB. Anything wider than about 2000px is wasted on a website, and large
 > files make the page slow to load. Most phone photo apps can export a smaller
 > copy.
+
+One-off entries with no `trip:` at all can go in `assets/images/misc/`.
 
 ## 2. Create the post file
 
@@ -53,7 +75,7 @@ The essentials:
 title: "Red Rock and a Flat Tire"
 date: 2026-06-14 17:20:00 -0600
 trip: southwest-2026
-image: /assets/images/moab-sunset.jpg
+image: /assets/images/southwest-2026/moab-sunset.jpg
 image_alt: Sandstone walls glowing orange at sunset
 author: Brian
 ---
@@ -176,21 +198,22 @@ a trip" on the Trips page.
 photo at the top of the entry and the thumbnail in every listing. One field.
 
 ```yaml
-image: /assets/images/moab-sunset.jpg
+image: /assets/images/southwest-2026/moab-sunset.jpg
 image_alt: Sandstone walls glowing orange at sunset
 image_caption: The last of the light.
 ```
 
-Always start the path with `/assets/images/`.
+Always start the path with `/assets/images/<trip-key>/`, matching the folder
+you uploaded the photo to.
 
 Extra photos in a grid at the bottom:
 
 ```yaml
 gallery:
-  - src: /assets/images/trailhead.jpg
+  - src: /assets/images/southwest-2026/trailhead.jpg
     alt: The trailhead at dawn
     caption: Mile zero.
-  - src: /assets/images/summit.jpg
+  - src: /assets/images/southwest-2026/summit.jpg
     alt: View from the top
 ```
 
@@ -199,7 +222,7 @@ in front of the path (the `image:` and `gallery:` fields above don't — the sit
 adds that part for you automatically there, but not inside the text you write):
 
 ```markdown
-![The view from the pass]({{ site.baseurl }}/assets/images/pass.jpg)
+![The view from the pass]({{ site.baseurl }}/assets/images/southwest-2026/pass.jpg)
 ```
 
 If you forget the `{{ site.baseurl }}` part, the photo will show up as a broken

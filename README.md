@@ -65,7 +65,7 @@ _data/locations.yml       every taggable place + its coordinates
 _data/trips.yml           every vacation
 _posts/                   the entries, one Markdown file each
 _drafts/TEMPLATE.md       copy this to start a new entry (not published)
-assets/images/            photos
+assets/images/<trip-key>/ photos, one subfolder per trip
 _layouts/, _includes/     page structure
 assets/css/style.css      all styling
 assets/js/                filtering + map behavior

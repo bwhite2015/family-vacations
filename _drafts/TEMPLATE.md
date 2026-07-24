@@ -22,8 +22,9 @@ date: 2026-07-20 14:30:00 -0600
 trip: southwest-2026
 
 # The thumbnail in listings AND the big image at the top of the entry.
-# Upload your photo to assets/images/ first, then point at it here.
-image: /assets/images/your-photo.jpg
+# Upload your photo to assets/images/<trip-key>/ first (a subfolder per trip,
+# named to match the "trip:" key above), then point at it here.
+image: /assets/images/southwest-2026/your-photo.jpg
 image_alt: Short description of the photo, for screen readers
 image_caption: Optional caption shown under the photo
 
@@ -32,10 +33,10 @@ author: Your name
 # OPTIONAL extra photos, shown in a grid at the bottom of the entry.
 # Delete this whole block if you don't want a gallery.
 gallery:
-  - src: /assets/images/another-photo.jpg
+  - src: /assets/images/southwest-2026/another-photo.jpg
     alt: Description
     caption: Optional caption
-  - src: /assets/images/third-photo.jpg
+  - src: /assets/images/southwest-2026/third-photo.jpg
     alt: Description
 
 # OPTIONAL. Locations are normally picked up automatically from the tags you
@@ -73,7 +74,7 @@ the path (unlike the `image:` and `gallery:` fields above, plain text in the
 body doesn't get that added automatically — skip it and the photo shows up
 broken on the live site):
 
-![Description of the photo]({{ site.baseurl }}/assets/images/your-photo.jpg)
+![Description of the photo]({{ site.baseurl }}/assets/images/southwest-2026/your-photo.jpg)
 
 - Bullet lists
 - Work fine too
