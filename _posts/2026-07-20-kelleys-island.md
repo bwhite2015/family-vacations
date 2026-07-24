@@ -41,7 +41,7 @@ gallery:
     caption: A later photo of our route into town from the Resort. 
   - src: /assets/images/mitened2228ac1-202d-4ac6-b181-fb4afe2cf190.jpg
     alt: Calvin and Aubri looking over the menu at The Village Pump. 
-    src: Bonus photo of Calvin hyping up the Perch at The Village Pump. This guy's been around!
+    caption: Bonus photo of Calvin hyping up the Perch at The Village Pump. This guy's been around!
 
 # OPTIONAL. Locations are normally picked up automatically from the tags you
 # write in the body text below. Only use this if you want to pin the entry to a
@@ -52,19 +52,19 @@ gallery:
 
 We packed up and got on the road for Calvin's first family vacation; a two-night stay at {% include loc.html id="kelleys-island" %}. We got to the ferry around noon and met up with my parents to board. Elli and Owen were at home dealing with electrical issues so would be about an hour behind.  
 
-![Calvin being a scallywag as we take the ferry over.](/assets/images/IMG_20260720_122008.jpg)
+![Calvin being a scallywag as we take the ferry over.]({{ site.baseurl }}/assets/images/IMG_20260720_122008.jpg)
 
 ###### *Calvin being a scallywag as we take the ferry over.*
 
 After leaving, we got on the island and waited for my dad to pick us up in his rental golf cart, a six seater. I answered emails and caught up on office news while waiting. Once he picked us up, we dropped our bags off at the {% include loc.html id="kelleys-venture" %} conference room and took a brief lap around the island while waiting for our room to finish up. We also stopped back at the golf cart pickup spot because we had some trouble with the parking brake’s sensitivity. The lady came out to check it and let us know it was just a bit sensitive and needed to be slowly pressed down to lock. We passed some key sites like the Glacial Grooves and Crusher building and then got back to the resort to stay by the pool for the remainder of the wait. Calvin got a dip in the pool and we snacked on some cubed cheese and ham while resting under the umbrella. Our room was ready by 3:00 so we went up and made ourselves comfortable.   
 
-![Aubri, Calvin and I enjoying the pool while waiting for our room.](/assets/images/IMG_20260720_153135.jpg)
+![Aubri, Calvin and I enjoying the pool while waiting for our room.]({{ site.baseurl }}/assets/images/IMG_20260720_153135.jpg)
 
 ###### *Aubri, Calvin and I enjoying the pool while waiting for our room.*
 
 Once our bedding arrangements were all determined, we decided upon our dinner locale, {% include loc.html id="kelleys-village-pump" %} for perch and beer. We did a lap around the island again to get us closer to dinner time, then parked for food. I got a perch dinner which included 10ish pieces of perch, fries, coleslaw, and garlic bread. I also got a Twin Oast Kelley’s Island Pilsner. Most of us got perch except my mom and sister who got walleye and nachos respectively. The nachos came out first and looked like “they dumped the whole bag on the plate” from Elli’s perspective. It was quite a bit of food all around but tasty!   
 
-![Elli with her nacho mound at The Village Pump.](/assets/images/IMG_20260720_162724.jpg)
+![Elli with her nacho mound at The Village Pump.]({{ site.baseurl }}/assets/images/IMG_20260720_162724.jpg)
 
 ###### *Sisyph-'sis' and her boulder.*
 
