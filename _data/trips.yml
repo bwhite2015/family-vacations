@@ -9,14 +9,9 @@
 # Only "name" is required. The rest is optional flavor for the trip page.
 # ---------------------------------------------------------------------------
 
-southwest-2026:
-  name: Southwest Road Trip 2026
-  dates: June 2026
-  blurb: Two weeks, five parks, and an unreasonable amount of red dust.
-  color: "#c2410c"
+kelleys-island-2026:
+  name: Kelleys Island 2026
+  dates: July 2026
+  blurb: Three days of relaxation and adventure off the shores of Lake Erie.
+  color: "#089404"
 
-colorado-2025:
-  name: Colorado Summer 2025
-  dates: July 2025
-  blurb: Mountain air, cold lakes, and the world's slowest hike.
-  color: "#0e7490"

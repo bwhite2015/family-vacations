@@ -11,38 +11,65 @@
 # them. First number is lat, second is lng.
 # ---------------------------------------------------------------------------
 
-zion:
-  name: Zion National Park
-  region: Utah, USA
-  lat: 37.2982
-  lng: -113.0263
+kelleys-island:
+  name: Kelleys Island
+  region: Kelley's Island, Ohio, USA
+  lat: 41.6014
+  lng: 82.6975
 
-moab:
-  name: Moab
-  region: Utah, USA
-  lat: 38.5733
-  lng: -109.5498
+kelleys-venture:
+  name: Kelleys Island Venture Resort
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5978 
+  lng: -82.7216
 
-arches:
-  name: Arches National Park
-  region: Utah, USA
-  lat: 38.7331
-  lng: -109.5925
+kelleys-villa:
+  name: The Villa Eatery & Bar
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5965
+  lng: -82.7252
 
-grand-canyon:
-  name: Grand Canyon South Rim
-  region: Arizona, USA
-  lat: 36.0544
-  lng: -112.1401
+kelleys-island-house:
+  name: The Island House
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5959
+  lng: -82.7107
 
-santa-fe:
-  name: Santa Fe
-  region: New Mexico, USA
-  lat: 35.6870
-  lng: -105.9378
+kelleys-village-pump:
+  name: The Village Pump
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5941
+  lng: -82.7110
 
-estes-park:
-  name: Estes Park
-  region: Colorado, USA
-  lat: 40.3772
-  lng: -105.5217
+kelleys-dipper-dan:
+  name: Dipper Dan's Ice Cream
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5946
+  lng: -82.7110
+
+kelleys-general-store:
+  name: Kelleys Island General Store
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5945
+  lng: -82.7106
+
+kelleys-seaway:
+  name: Seaway Marina
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5912
+  lng: -82.7038
+
+kelleys-wine-co:
+  name: Kelleys Island Wine Company
+  region: Kelley's Island, Ohio, USA
+  lat: 41.5958
+  lng: -82.6968
+
+kelleys-grooves:
+  name: Glacial Grooves
+  region: Kelley's Island, Ohio, USA
+  lat: 41.6166
+  lng: -82.7065
+  
+
+  
