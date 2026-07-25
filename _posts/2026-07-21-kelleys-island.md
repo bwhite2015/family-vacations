@@ -32,7 +32,7 @@ gallery:
     caption: Calvin gets a new hat!
   - src: /assets/images/kelleys-island-2026/IMG_20260721_160958.jpg
     alt: Calvin looking over the end table in the resort room.
-    caption: Calvin looking ove the end table for things to hoard.
+    caption: Calvin looking over the end table for things to hoard.
   - src: /assets/images/kelleys-island-2026/IMG_20260721_164612.jpg
     alt: Ferries on Lake Erie coming to and from the island.
     caption: Ferries in the distance coming to and from the island.
@@ -41,7 +41,7 @@ gallery:
     caption: A Boba Fett house. I bet there's a sarlacc under that gazebo. 
   - src: /assets/images/kelleys-island-2026/IMG_20260721_164746.jpg
     alt: A white house on Kelleys Island with frilly flourishes and trim.
-    caption: If a wedding dress became a house, or perhaps a house got married.
+    caption: If a wedding dress became a house, or perhaps a house on her wedding day.
   - src: /assets/images/kelleys-island-2026/IMG_20260721_164829.jpg
     alt: Street view of the Island Market on Kelleys Island.
     caption: A downtown grocery store called the Island Market.
@@ -84,13 +84,13 @@ On our second day, we started off by getting up around 6:00am for Calvin. We got
 
 ###### *The Island House staff whipped up a good chai latte.*
 
-After some time lounging with Calvin in the room, we then got around for some exploration. After discovering the cart was dead, and getting a new one towed to us (my bad) we made our way over to the famous {% include loc.html id="kelleys-grooves" %}. Calvin had been dressed assuming it would be cooler out so when we got there and the sun was out, we found that after a lap around the grooves, that he needed to change into something more comfortable. So back at the golf cart, we changed him and then made our way into town to the {% include loc.html id="kelleys-general-store" %} to get Calvin a boonie hat as a souvenir.
+After some time lounging with Calvin in the room, we then got around for some exploration. After discovering the cart was dead, and getting a new one towed to us (my bad) we made our way over to the famous {% include loc.html id="kelleys-grooves" %}. Calvin had been dressed assuming it would be cooler out so when we got there and the sun was out, we found that after a lap around the grooves, he needed to change into something more comfortable. So back at the golf cart, we changed him and then made our way into town to the {% include loc.html id="kelleys-general-store" %} to get Calvin a boonie hat as a souvenir.
 
 ![Aubri and Calvin standing in front of the Glacial Grooves.]({{ site.baseurl }}/assets/images/kelleys-island-2026/IMG_20260721_132119.jpg)
 
 ###### *Aubri and Calvin standing at the Glacial Grooves.*
 
-Once we touched base back at the resort again, we took a small break before getting dinner at the {% include loc.html id="kelleys-wine-co" %}. On our way there, we made a wrong turn and ended up passing by the {% include loc.html id="kelleys-airport" %} again, which is this somewhat hazardous looking stop at the intersection of the landing strip that vehicles must stop at to yield to any possible aircraft touching down on the island. There were other points of interest as well, such as {% include loc.html id="kelleys-4h-camp" %} that Aubri remembered visiting for archery a while back. Once we got to the winery we got seated outside and my mom and I both got a 'sweet' wine tasting tray while Aubri got the sweetest red wine called the "Long Sweet Red" which was effectively grape juice (her preferred taste). For food, we got a pepperoni pizza and a deluxe pizza. Everything was pretty good! One oddity we found was that someone's car alarm kept sounding off about every 5 minutes for some reason. We were not sure why or who but even the waitresses were annoyed. Otherwise, a great atmosphere on the front patio. 
+Once we touched base back at the resort again, we took a small break before getting dinner at the {% include loc.html id="kelleys-wine-co" %}. On our way there, we made a wrong turn and ended up passing by the {% include loc.html id="kelleys-airport" %} again, which is this somewhat hazardous looking stop at the intersection of the runway that vehicles must stop at to yield to any possible aircraft touching down on the island. There were other points of interest as well, such as {% include loc.html id="kelleys-4h-camp" %} which Aubri remembered visiting for archery a while back. Once we got to the winery we got seated outside and my mom and I both got a 'sweet' wine tasting tray while Aubri got the sweetest red wine called the "Long Sweet Red" which was effectively grape juice (her preferred taste). For food, we got a pepperoni pizza and a deluxe pizza. Everything was pretty good! One oddity we found was that someone's car alarm kept sounding off about every 5 minutes for some reason. We were not sure why or who but even the waitresses were annoyed. Otherwise, a great atmosphere on the front patio. 
 
 ![The family prepares to eat pizza at Kelleys Island Wine Co.]({{ site.baseurl }}/assets/images/kelleys-island-2026/IMG_20260721_170318.jpg)
 
@@ -102,7 +102,7 @@ When we got back to the room, we decompressed from the day's adventures, played 
 
 ###### *The view of Lake Erie from the Villa's bar.*
 
-This happened about exactly as planned, although we did see the Crawfords on our walk off the ferry. They happened to be boarding for a day-away trip over to the island while we were on our way out. Overall, it was a great but short little first vacation for Calvin!
+This happened about exactly as planned, although we did see the Crawfords on our walk off of the ferry. They happened to be boarding for a day-away trip over to the island while we were on our way out. Overall, it was a great but short little first vacation for Calvin!
 
 ![Calvin stubbornly waits to board the ferry.]({{ site.baseurl }}/assets/images/kelleys-island-2026/IMG_20260722_094051.jpg)
 
