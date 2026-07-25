@@ -140,6 +140,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 .filters__chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
 
+.filters__locs:not(:empty) { margin-top: .6rem; padding-top: .6rem; border-top: 1px dashed var(--line); }
+.filters__loc-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+.filters__loc-group[hidden] { display: none; }
+
 .chip {
   font: inherit; font-size: .85rem; font-weight: 500;
   color: var(--ink-soft); background: var(--surface);
@@ -154,6 +158,7 @@ a:hover { text-decoration-thickness: 2px; }
   border-color: var(--tag-color, var(--accent));
 }
 .chip--trip { --tag-color: var(--accent); }
+.chip--sm { font-size: .78rem; padding: .3rem .7rem; }
 
 .filters__count { margin: 1rem 0 0; font-size: .875rem; color: var(--ink-faint); }
 

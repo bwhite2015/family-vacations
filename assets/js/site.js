@@ -17,7 +17,8 @@
 
   var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
   var search = document.getElementById('q');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.filters__chips .chip'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.filters__chips .chip, .filters__locs .chip'));
+  var locGroups = Array.prototype.slice.call(document.querySelectorAll('.filters__loc-group'));
   var count = document.getElementById('result-count');
   var empty = document.getElementById('empty-state');
 
@@ -53,6 +54,12 @@
     });
 
     if (empty) empty.hidden = shown !== 0;
+
+    // Only the selected trip's place chips are worth showing — that's the
+    // whole point of nesting them, so it can't just be an is-active class.
+    locGroups.forEach(function (g) {
+      g.hidden = g.getAttribute('data-trip-group') !== state.trip;
+    });
 
     if (count) {
       var filtered = state.q || state.trip || state.loc;
@@ -95,6 +102,7 @@
         state.loc = null;
       } else if (kind === 'trip') {
         state.trip = state.trip === val ? null : val;   // click again to clear
+        state.loc = null;   // place chips belong to a trip; switching trips clears the place filter
       } else if (kind === 'loc') {
         state.loc = state.loc === val ? null : val;
       }
@@ -127,6 +135,17 @@
   state.loc = incoming.get('loc') || null;
   state.q = (incoming.get('q') || '').trim().toLowerCase();
   if (state.q && search) search.value = state.q;
+
+  // A /?loc= link (e.g. from a post's inline place tag) won't carry the
+  // trip, but its chip only renders inside that trip's group — find it so
+  // the group is revealed instead of the chip being unreachable.
+  if (state.loc && !state.trip) {
+    var locChip = chips.filter(function (c) {
+      return c.getAttribute('data-filter') === 'loc' && c.getAttribute('data-value') === state.loc;
+    })[0];
+    var owningGroup = locChip && locChip.closest('.filters__loc-group');
+    if (owningGroup) state.trip = owningGroup.getAttribute('data-trip-group');
+  }
 
   apply();
 })();
