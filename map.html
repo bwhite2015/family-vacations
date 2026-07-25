@@ -49,7 +49,8 @@ map: true
       {%- assign haystack = "," | append: scanned_locations | append: "," -%}
       {%- if haystack contains probe -%}
         {{- inner_sep -}}
-        {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%b %-d, %Y" | jsonify }},"trip":{{ post.trip | default: "" | jsonify }},"image":{% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}}
+        {%- assign post_trip = site.data.trips[post.trip] -%}
+        {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%b %-d, %Y" | jsonify }},"trip":{{ post.trip | default: "" | jsonify }},"tripName":{{ post_trip.name | default: "" | jsonify }},"tripUrl":{% if post.trip %}{{ "/?trip=" | append: post.trip | relative_url | jsonify }}{% else %}null{% endif %},"image":{% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}}
         {%- assign inner_sep = "," -%}
       {%- endif -%}
     {%- endfor -%}

@@ -30,14 +30,14 @@
 
 {%- assign chunks = include.html | split: 'data-loc="' -%}
 {%- for chunk in chunks offset:1 -%}
-  {%- assign id = chunk | split: '"' | first -%}
-  {%- assign probe = "," | append: id | append: "," -%}
+  {%- assign loc_id = chunk | split: '"' | first -%}
+  {%- assign probe = "," | append: loc_id | append: "," -%}
   {%- assign haystack = "," | append: scanned_locations | append: "," -%}
   {%- unless haystack contains probe -%}
     {%- if scanned_locations == "" -%}
-      {%- assign scanned_locations = id -%}
+      {%- assign scanned_locations = loc_id -%}
     {%- else -%}
-      {%- assign scanned_locations = scanned_locations | append: "," | append: id -%}
+      {%- assign scanned_locations = scanned_locations | append: "," | append: loc_id -%}
     {%- endif -%}
   {%- endunless -%}
 {%- endfor -%}

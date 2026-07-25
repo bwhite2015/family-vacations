@@ -35,18 +35,43 @@
     var html = '<div class="pin">';
     html += '<h3 class="pin__name">' + esc(place.name) + '</h3>';
     if (place.region) html += '<p class="pin__region">' + esc(place.region) + '</p>';
-    html += '<ul class="pin__posts">';
 
+    // Group this place's posts by trip so a location shared across trips
+    // shows one heading per trip rather than one flat, unlabeled list.
+    var groups = [];
+    var byTrip = {};
     place.posts.forEach(function (p) {
-      html += '<li><a href="' + esc(p.url) + '">';
-      if (p.image) {
-        html += '<img src="' + esc(p.image) + '" alt="" loading="lazy">';
+      var key = p.trip || '';
+      if (!byTrip[key]) {
+        byTrip[key] = { tripName: p.tripName, tripUrl: p.tripUrl, posts: [] };
+        groups.push(byTrip[key]);
       }
-      html += '<span><strong>' + esc(p.title) + '</strong>';
-      html += '<time>' + esc(p.date) + '</time></span></a></li>';
+      byTrip[key].posts.push(p);
     });
 
-    html += '</ul></div>';
+    groups.forEach(function (g) {
+      if (g.tripName) {
+        html += '<div class="pin__trip">';
+        html += '<h4 class="pin__trip-name">' + esc(g.tripName) + '</h4>';
+        if (g.tripUrl) {
+          html += '<a class="pin__trip-link" href="' + esc(g.tripUrl) + '">View all trip entries</a>';
+        }
+        html += '</div>';
+      }
+
+      html += '<ul class="pin__posts">';
+      g.posts.forEach(function (p) {
+        html += '<li><a href="' + esc(p.url) + '">';
+        if (p.image) {
+          html += '<img src="' + esc(p.image) + '" alt="" loading="lazy">';
+        }
+        html += '<span><strong>' + esc(p.title) + '</strong>';
+        html += '<time>' + esc(p.date) + '</time></span></a></li>';
+      });
+      html += '</ul>';
+    });
+
+    html += '</div>';
     return html;
   }
 
