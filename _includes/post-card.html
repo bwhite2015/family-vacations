@@ -12,6 +12,16 @@
   {%- for id in card_loc_ids -%}{{ site.data.locations[id].name }} {% endfor -%}
 {%- endcapture -%}
 
+{%- comment -%}
+  Cards show at most a handful of location tags — a heavily-tagged entry
+  shouldn't blow up the card's height (and the empty space that leaves in
+  its shorter row-mates). The full list still lives in data-locations for
+  the client-side filter, and the post page itself shows every tag.
+{%- endcomment -%}
+{%- assign card_loc_limit = 5 -%}
+{%- assign card_loc_shown = card_loc_ids | slice: 0, card_loc_limit -%}
+{%- assign card_loc_extra = card_loc_ids.size | minus: card_loc_limit -%}
+
 <article class="card"
          data-trip="{{ post.trip }}"
          data-locations="{{ scanned_locations }}"
@@ -43,7 +53,7 @@
         <span class="tag__icon" aria-hidden="true">🧳</span>{{ card_trip.name }}
       </a>
       {%- endif %}
-      {%- for id in card_loc_ids %}
+      {%- for id in card_loc_shown %}
         {%- assign loc = site.data.locations[id] %}
         {%- if loc %}
       <a class="tag tag--loc" href="{{ '/?loc=' | append: id | relative_url }}">
@@ -51,6 +61,9 @@
       </a>
         {%- endif %}
       {%- endfor %}
+      {%- if card_loc_extra > 0 %}
+      <a class="tag tag--more" href="{{ post.url | relative_url }}">+{{ card_loc_extra }} more</a>
+      {%- endif %}
     </div>
   </div>
 </article>

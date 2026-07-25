@@ -164,6 +164,7 @@ a:hover { text-decoration-thickness: 2px; }
   grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr));
   gap: 1.5rem;
   padding-bottom: 3rem;
+  align-items: start; /* each card sizes to its own content, not the tallest in its row */
 }
 
 .card {
@@ -199,7 +200,7 @@ a:hover { text-decoration-thickness: 2px; }
 .card__title a { color: var(--ink); text-decoration: none; }
 .card__title a:hover { color: var(--accent); }
 
-.card__excerpt { margin: 0; color: var(--ink-soft); font-size: .93rem; flex: 1; }
+.card__excerpt { margin: 0; color: var(--ink-soft); font-size: .93rem; }
 
 /* -------------------------------------------------------------------- tags */
 
@@ -218,6 +219,7 @@ a:hover { text-decoration-thickness: 2px; }
 .tag__icon { font-size: .85em; }
 .tag--trip { --tag-color: var(--accent); }
 .tag--loc  { --tag-color: #0e7490; }
+.tag--more { --tag-color: var(--ink-faint); font-weight: 600; }
 
 @media (prefers-color-scheme: dark) {
   .tag--loc { --tag-color: #22d3ee; }
