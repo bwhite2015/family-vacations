@@ -13,8 +13,8 @@ author: The White Family
 #     baseurl: "/vacations"
 #     url: "https://<username>.github.io"
 # ---------------------------------------------------------------------------
-baseurl: "/family-vacations"
-url: "https://bwhite2015.github.io"
+baseurl: ""
+url: "https://trips.whytemore.com"
 
 timezone: America/Denver
 
