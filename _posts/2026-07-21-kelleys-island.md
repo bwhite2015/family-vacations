@@ -8,7 +8,7 @@
 # you have a reason not to.
 # ===========================================================================
 
-title: Kelleys Island - Day 2 & 3
+title: Kelleys Island '26 - Day 2 & 3
 # Displayed date AND sort order. Edit this freely — you can back-date an entry
 # you're writing weeks later, or post-date one. Format:
 #     YYYY-MM-DD HH:MM:SS ±HHMM

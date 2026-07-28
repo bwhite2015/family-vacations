@@ -11,6 +11,21 @@
 # them. First number is lat, second is lng.
 # ---------------------------------------------------------------------------
 
+
+# Trip: Sweeting Orchards 2026
+sweeting-orchards:
+  name: Sweeting Orchards
+  region: Willard, Ohio, USA
+  lat: 41.0530
+  lng: -82.7253
+
+sweeting-ice-cream:
+  name: Sweeting Orchard Ice Cream
+  region: Willard, Ohio, USA
+  lat: 41.0476
+  lng: -82.6087
+
+# Trip: Kelleys Island 2026
 kelleys-island:
   name: Kelleys Island
   region: Kelleys Island, Ohio, USA
@@ -94,4 +109,16 @@ kelleys-sand-trap:
   region: Kelleys Island, Ohio, USA
   lat: 41.5950
   lng: -82.7109
+
+# Misc Locations
+attica-oh:
+  name: Attica
+  region: Attica, Ohio, USA
+  lat: 41.0647
+  lng: -82.8869
   
+willard-oh:
+  name: Willard
+  region: Willard, Ohio, USA
+  lat: 41.05301
+  lng: -82.7264

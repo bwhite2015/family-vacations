@@ -9,6 +9,12 @@
 # Only "name" is required. The rest is optional flavor for the trip page.
 # ---------------------------------------------------------------------------
 
+sweeting-daytrip-2026:
+  name: Day Trip to Sweeting Orchards 2026
+  dates: July 2026
+  blurb: A day trip to Sweeting Orchards to pick peaches and enjoy some ice cream with friends and family.
+  color: "#edd286"
+
 kelleys-island-2026:
   name: Kelleys Island 2026
   dates: July 2026
