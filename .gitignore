@@ -7,3 +7,6 @@ vendor/
 .bundle/
 .DS_Store
 Thumbs.db
+
+# Local-only working files (originals, scratch assets) -- never pushed
+local-only/

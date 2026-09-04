@@ -44,3 +44,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - local-only
