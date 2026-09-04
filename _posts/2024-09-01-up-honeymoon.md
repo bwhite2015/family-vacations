@@ -70,7 +70,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing style may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
@@ -80,11 +80,11 @@ gallery:
 
 ##### *Apart from these changes, you'll have to forgive the grammatical errors and fragmented sentences.*
 
-___
+---
 
 9/1/24
 
-___
+---
 
 Been about a week since we got back home from the Honeymoon. Things are going well at work and we are both getting back into the groove of things. I'm looking back with a week's distance on these Honeymoon days now. 
 Day 6 was a "Dog Day", meaning we were focused on staying with the dogs and keeping them entertained. We started the day with coffee and eggs, slowly getting around to planning our activities. I ate a hard tack cinnamon toasty by {% include loc.html id="up-trenary-toast-cafe" %} of Marquette, dipping it in my coffee to resuscitate it back into an edible form. We had actually purchased those on our arrival day in {% include loc.html id="up-covington" %} at the nearby gas station/ grocery (3 mins). Not bad! 
@@ -101,7 +101,7 @@ The jutting chunks of rock would peak up from the water, allowing for little foo
 
 On our walk, Boone got a good climbing session of her own in, hopping up 3 foot boulders and trailing around roots and branches with ease; a natural born hiker. Tilly trailed me closely, minding my steps and choice of footing. The hiking shoes I had purchased in Tahquamenon, Fitkicks, were more sock than shoe, and had gotten soaked on days prior, so I had put on the next closest thing for this hike, watershed I had bought while kayaking at my bachelor party. They may sound uncomfortable but my feet adapted to the high touch sensitivity of both options.
 
-![Boone signs her code word – "\}" –  signalling potential danger on the trail ahead.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg)
+![Boone signs her code word – "" –  signalling potential danger on the trail ahead.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg)
 
 ![Navigating the path down from the trail into the basin at Canyon Falls, as demonstrated by Aubri and Tilly.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_122239.jpg)
 

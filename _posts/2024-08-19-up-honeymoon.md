@@ -57,7 +57,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing style may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*

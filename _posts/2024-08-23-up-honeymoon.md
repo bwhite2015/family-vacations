@@ -64,7 +64,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing style may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
@@ -74,11 +74,11 @@ gallery:
 
 ##### *Apart from these changes, you'll have to forgive the grammatical errors and fragmented sentences.*
 
-___
+---
 
 Honeymoon - Day 6 - 8/23/24
 
-___
+---
 
 Day 4 was primarily a travel day. We had taken the dogs on a walk then began our drive to our second AirBnB in {% include loc.html id="up-covington" %}. On our way, we would stop briefly at {% include loc.html id="up-pictured-rocks" %} and {% include loc.html id="up-munising" %} to see the sights and get some food respectively. We only got a glimpse of Pictured Rocks on its west side since, in the infinite wisdom of the federal gov't, dogs aren't allowed on any trails. It was nice looking but we didn't stick around to explore. 
 
@@ -91,4 +91,3 @@ In Munising we had some of the best Mexican food we've had in quite a while at a
 We got to the AirBnB after 2 hours of travel, having gotten briefly lost about a mile from the cabin due to the lack of addresses for property in the area. After getting onto {% include loc.html id="up-vermilac-lake-rd" %} (off of {% include loc.html id="up-old-michigan-28" %}) I didn't turn right onto {% include loc.html id="up-agate-st" %} when I should have. Once I correctly did this, it was an immediate left at the fork then a second left at the T: {% include loc.html id="up-black-moth" %}! A lovely green cabin with nice wooden furnishing, a wood burning hot tub and a lake in the backyard. 
 
 ![Finally at Black Moth Cabin, we take in its beauty.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240821_164329.jpg)
-
