@@ -11,6 +11,37 @@
     });
   }
 
+  /* ----------------------------------------------------------- captions --- */
+  // Photos between paragraphs are written as plain Markdown, which Kramdown
+  // renders as a bare <img> alone in its own <p> — so the text in the square
+  // brackets never shows. Every entry writes that text as a caption, so
+  // promote it: the paragraph becomes a <figure> with the text underneath.
+  // The alt is emptied in the process, otherwise a screen reader reads the
+  // same sentence twice, once as the image and once as its caption.
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.post__body p > img[alt]'),
+    function (img) {
+      var p = img.parentNode;
+
+      // Only a paragraph holding nothing but the photo. An image sitting
+      // mid-sentence is part of the prose and stays as it is.
+      if (p.children.length !== 1 || (p.textContent || '').trim()) return;
+
+      var text = (img.getAttribute('alt') || '').trim();
+      if (!text) return;
+
+      var figure = document.createElement('figure');
+      figure.className = 'post__figure';
+      var caption = document.createElement('figcaption');
+      caption.textContent = text;
+
+      p.parentNode.replaceChild(figure, p);
+      figure.appendChild(img);
+      figure.appendChild(caption);
+      img.setAttribute('alt', '');
+    }
+  );
+
   /* ------------------------------------------------------------ filters --- */
   var list = document.getElementById('post-list');
   if (!list) return;

@@ -241,6 +241,11 @@ adds that part for you automatically there, but not inside the text you write):
 If you forget the `{{ site.baseurl }}` part, the photo will show up as a broken
 image icon on the live site instead of the picture.
 
+The text in the square brackets prints under the photo as its caption, so write
+it as one — a sentence a reader would want, not a bare description. It doubles
+as the alt text for anyone using a screen reader. A photo you'd rather leave
+uncaptioned just gets empty brackets: `![]({{ site.baseurl }}/...)`.
+
 ---
 
 ## Fixing a mistake

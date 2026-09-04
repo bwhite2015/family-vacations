@@ -260,6 +260,14 @@ a:hover { text-decoration-thickness: 2px; }
 .post__body h2 { font-family: var(--font); font-size: 1.4rem; margin-top: 2.5rem; letter-spacing: -.015em; }
 .post__body h3 { font-family: var(--font); font-size: 1.15rem; margin-top: 2rem; }
 .post__body img { border-radius: var(--radius); margin-inline: auto; box-shadow: var(--shadow); }
+
+/* Built by site.js from a body image's alt text — see the captions block there. */
+.post__figure { margin: 0; }
+.post__figure img { display: block; }
+.post__figure figcaption {
+  margin-top: .5rem; font-family: var(--font);
+  font-size: .85rem; color: var(--ink-faint); text-align: center;
+}
 .post__body blockquote {
   margin-inline: 0; padding: .25rem 0 .25rem 1.25rem;
   border-left: 3px solid var(--accent); color: var(--ink-soft); font-style: italic;

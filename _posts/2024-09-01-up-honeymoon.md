@@ -33,6 +33,9 @@ gallery:
   - src: /assets/images/up-honeymoon-2024/IMG_20240823_123930.jpg
     alt: View of the river from the Canyon Falls trail. 
     caption: A view of the river from the trail at Canyon Falls.
+  - src: /assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg
+    alt: Boone stays alert while hiking on the trail. 
+    caption: Boone signs her code word – "}" –  signalling potential danger on the trail ahead.
   - src: /assets/images/up-honeymoon-2024/IMG_20240824_140749.jpg
     alt: Balcony inside of Blackrocks Brewery. 
     caption: A taste of the nooks and crannies within Blackrocks Brewery.
@@ -59,7 +62,7 @@ gallery:
     caption: Does root beer help neutralize spice or amplify it? Asking for a friend. 
   - src: /assets/images/up-honeymoon-2024/IMG_20240825_063512.jpg
     alt: Final selfie of the Black Moth Cabin before leaving for home. 
-    caption: A final selfie before our voyage home. 
+    caption: A final selfie before our voyage home.
 
 
 
@@ -100,8 +103,6 @@ The jutting chunks of rock would peak up from the water, allowing for little foo
 ![The 'Falls' part of 'Canyon Falls' in all their glory.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_124217.jpg)
 
 On our walk, Boone got a good climbing session of her own in, hopping up 3 foot boulders and trailing around roots and branches with ease; a natural born hiker. Tilly trailed me closely, minding my steps and choice of footing. The hiking shoes I had purchased in Tahquamenon, Fitkicks, were more sock than shoe, and had gotten soaked on days prior, so I had put on the next closest thing for this hike, watershed I had bought while kayaking at my bachelor party. They may sound uncomfortable but my feet adapted to the high touch sensitivity of both options.
-
-![Boone signs her code word – "\}" –  signalling potential danger on the trail ahead.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg)
 
 ![Navigating the path down from the trail into the basin at Canyon Falls, as demonstrated by Aubri and Tilly.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_122239.jpg)
 
