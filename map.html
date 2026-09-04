@@ -50,7 +50,7 @@ map: true
       {%- if haystack contains probe -%}
         {{- inner_sep -}}
         {%- assign post_trip = site.data.trips[post.trip] -%}
-        {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%b %-d, %Y" | jsonify }},"trip":{{ post.trip | default: "" | jsonify }},"tripName":{{ post_trip.name | default: "" | jsonify }},"tripUrl":{% if post.trip %}{{ "/?trip=" | append: post.trip | relative_url | jsonify }}{% else %}null{% endif %},"image":{% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %}}
+        {"title":{{ post.title | jsonify }},"url":{{ post.url | relative_url | jsonify }},"date":{{ post.date | date: "%b %-d, %Y" | jsonify }},"trip":{{ post.trip | default: "" | jsonify }},"tripName":{{ post_trip.name | default: "" | jsonify }},"tripColor":{{ post_trip.color | default: "" | jsonify }},"tripUrl":{% if post.trip %}{{ "/?trip=" | append: post.trip | relative_url | jsonify }}{% else %}null{% endif %},"image":{% if post.image %}{{ post.image | relative_url | jsonify }}{% else %}null{% endif %},"imagePosition":{{ post.image_position | default: "" | jsonify }}}
         {%- assign inner_sep = "," -%}
       {%- endif -%}
     {%- endfor -%}

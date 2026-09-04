@@ -206,6 +206,19 @@ image_caption: The last of the light.
 Always start the path with `/assets/images/<trip-key>/`, matching the folder
 you uploaded the photo to.
 
+The listing thumbnail is a wide crop taken from the middle of the photo, which
+suits nearly every shot. If the subject sits near an edge — a tall portrait
+photo with the subject low in the frame, say — the centred crop can cut it off.
+Move the crop with `image_position`:
+
+```yaml
+image_position: center bottom
+```
+
+It takes any CSS `object-position` value: `center bottom`, `center top`,
+`50% 80%`. Leave it out and the thumbnail stays centred. It only affects the
+listing thumbnail — the big photo on the entry itself is never cropped.
+
 Extra photos in a grid at the bottom:
 
 ```yaml

@@ -23,6 +23,12 @@ trip: up-honeymoon-2024
 image: /assets/images/up-honeymoon-2024/IMG_20240820_124946.jpg
 image_alt: Fort Mackinac with a statue of Marquette in the foreground.
 image_caption: Fort Mackinac from below.
+# OPTIONAL. Where the listing thumbnail crops the photo. Defaults to "center",
+# which is right for nearly every photo. Set it when the subject sits near an
+# edge — a tall portrait shot with the subject low, like this one — and the
+# centred crop would cut it off. Any CSS object-position value works:
+# "center bottom", "center top", "50% 80%".
+image_position: center bottom
 author: Ben
 # OPTIONAL extra photos, shown in a grid at the bottom of the entry.
 # Delete this whole block if you don't want a gallery.

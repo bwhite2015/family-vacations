@@ -27,6 +27,10 @@ trip: southwest-2026
 image: /assets/images/southwest-2026/your-photo.jpg
 image_alt: Short description of the photo, for screen readers
 image_caption: Optional caption shown under the photo
+# OPTIONAL. Where the listing thumbnail crops the photo. Defaults to "center".
+# Set it only when the subject sits near an edge and the centred crop cuts it
+# off. Any CSS object-position value: "center bottom", "center top", "50% 80%".
+# image_position: center bottom
 
 author: Your name
 

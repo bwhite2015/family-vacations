@@ -358,6 +358,12 @@ a:hover { text-decoration-thickness: 2px; }
 .map__error { padding: 2rem; text-align: center; color: var(--ink-soft); }
 .map-filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.25rem; }
 
+/* Markers are inline SVG (see assets/js/map.js) so each pin can be filled with
+   its trip's colour. Leaflet's own icon styling is skipped — passing our own
+   className replaces .leaflet-div-icon and its white box. */
+.pin-marker { background: none; border: 0; }
+.pin-marker svg { display: block; filter: drop-shadow(0 2px 3px rgba(28, 25, 23, .35)); }
+
 .pin__name { margin: 0 0 .1rem; font-size: 1rem; }
 .pin__region { margin: 0 0 .6rem; font-size: .8rem; color: #666; }
 .pin__trip { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin: .7rem 0 .3rem; }

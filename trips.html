@@ -27,8 +27,14 @@ permalink: /trips/
       {%- for post in trip_posts %}
       <li>
         <a href="{{ post.url | relative_url }}">
+          {%- comment -%}
+            "image_position:" in an entry's front matter moves this crop off
+            centre, for a photo whose subject sits near an edge. Same field the
+            blog cards use — see _includes/post-card.html.
+          {%- endcomment -%}
           {%- if post.image %}
-          <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+          <img src="{{ post.image | relative_url }}" alt="" loading="lazy"
+               {%- if post.image_position %} style="object-position: {{ post.image_position | escape }}"{% endif %}>
           {%- else %}
           <span class="trip__posts-fallback" aria-hidden="true">📷</span>
           {%- endif %}

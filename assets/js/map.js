@@ -63,7 +63,13 @@
       g.posts.forEach(function (p) {
         html += '<li><a href="' + esc(p.url) + '">';
         if (p.image) {
-          html += '<img src="' + esc(p.image) + '" alt="" loading="lazy">';
+          // imagePosition comes from the entry's "image_position:" front
+          // matter — the same field the blog cards and trip lists use to pull
+          // a crop off centre when the subject sits near an edge.
+          var pos = p.imagePosition
+            ? ' style="object-position: ' + esc(p.imagePosition) + '"'
+            : '';
+          html += '<img src="' + esc(p.image) + '" alt="" loading="lazy"' + pos + '>';
         }
         html += '<span><strong>' + esc(p.title) + '</strong>';
         html += '<time>' + esc(p.date) + '</time></span></a></li>';
@@ -75,6 +81,43 @@
     return html;
   }
 
+  /* ------------------------------------------------------------- pins --- */
+
+  // Falls back to the site accent for a place whose entries have no trip, or
+  // whose trip carries no "color:" in _data/trips.yml.
+  var PIN_FALLBACK = '#c2410c';
+
+  // A place can be tagged by entries from more than one trip, so there isn't
+  // always a single right colour. Unfiltered, the pin takes the colour of the
+  // most recent entry written about the place (place.posts is newest-first).
+  // With a trip filter active, it takes that trip's colour instead, so a
+  // filtered map reads as one colour.
+  function pinColor(place, trip) {
+    var posts = place.posts;
+    for (var i = 0; i < posts.length; i++) {
+      if (trip && posts[i].trip !== trip) continue;
+      if (posts[i].tripColor) return posts[i].tripColor;
+    }
+    return PIN_FALLBACK;
+  }
+
+  function pinIcon(color) {
+    var svg =
+      '<svg width="26" height="36" viewBox="0 0 26 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<path d="M13 35C13 35 24.2 21.4 24.2 12.8A11.2 11.2 0 1 0 1.8 12.8C1.8 21.4 13 35 13 35Z" ' +
+      'fill="' + esc(color) + '" stroke="rgba(28,25,23,.55)" stroke-width="1.5"/>' +
+      '<circle cx="13" cy="12.8" r="4.1" fill="#fff" fill-opacity=".92"/>' +
+      '</svg>';
+
+    return L.divIcon({
+      className: 'pin-marker',
+      html: svg,
+      iconSize: [26, 36],
+      iconAnchor: [13, 35],
+      popupAnchor: [0, -31]
+    });
+  }
+
   // One marker per place; each keeps the set of trips it belongs to so the
   // trip filter can hide it without rebuilding the layer.
   var markers = places.map(function (place) {
@@ -82,7 +125,8 @@
     place.posts.forEach(function (p) { if (p.trip) trips[p.trip] = true; });
 
     var marker = L.marker([place.lat, place.lng], {
-      title: place.name
+      title: place.name,
+      icon: pinIcon(pinColor(place, null))
     }).bindPopup(popupHtml(place), { maxWidth: 320, minWidth: 220 });
 
     marker._trips = trips;
@@ -112,10 +156,13 @@
 
       buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
 
+      var forTrip = want === 'all' ? null : want;
+
       var visible = [];
       markers.forEach(function (m) {
         var show = want === 'all' || m._trips[want];
         if (show) {
+          m.setIcon(pinIcon(pinColor(m._place, forTrip)));
           if (!map.hasLayer(m)) m.addTo(map);
           visible.push(m);
         } else if (map.hasLayer(m)) {

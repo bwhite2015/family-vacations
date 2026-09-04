@@ -27,9 +27,17 @@
          data-locations="{{ scanned_locations }}"
          data-search="{{ post.title | append: ' ' | append: card_loc_names | append: ' ' | append: card_trip.name | append: ' ' | append: post.excerpt | strip_html | normalize_whitespace | downcase | strip | escape }}">
 
+  {%- comment -%}
+    The thumbnail is a 16:10 crop of the entry's image. It's centred by default,
+    which is wrong for the occasional photo whose subject sits near an edge —
+    a tall portrait shot with the subject low, say. Such an entry can set
+    "image_position:" in its front matter (any CSS object-position value, e.g.
+    "center bottom" or "50% 80%") to move the crop window.
+  {%- endcomment -%}
   <a class="card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
     {%- if post.image %}
-    <img src="{{ post.image | relative_url | escape }}" alt="" loading="lazy">
+    <img src="{{ post.image | relative_url | escape }}" alt="" loading="lazy"
+         {%- if post.image_position %} style="object-position: {{ post.image_position | escape }}"{% endif %}>
     {%- else %}
     <span class="card__thumb-fallback">📷</span>
     {%- endif %}
