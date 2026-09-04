@@ -101,7 +101,7 @@ The jutting chunks of rock would peak up from the water, allowing for little foo
 
 On our walk, Boone got a good climbing session of her own in, hopping up 3 foot boulders and trailing around roots and branches with ease; a natural born hiker. Tilly trailed me closely, minding my steps and choice of footing. The hiking shoes I had purchased in Tahquamenon, Fitkicks, were more sock than shoe, and had gotten soaked on days prior, so I had put on the next closest thing for this hike, watershed I had bought while kayaking at my bachelor party. They may sound uncomfortable but my feet adapted to the high touch sensitivity of both options.
 
-![Boone signs her code word – "" –  signalling potential danger on the trail ahead.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg)
+![Boone signs her code word – "\}" –  signalling potential danger on the trail ahead.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_123620.jpg)
 
 ![Navigating the path down from the trail into the basin at Canyon Falls, as demonstrated by Aubri and Tilly.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_122239.jpg)
 
