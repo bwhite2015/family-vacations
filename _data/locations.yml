@@ -112,10 +112,9 @@ kelleys-sand-trap:
 
 # Trip: Upper Peninsula, MI - Honeymoon 2024
 #
-# Entries below with commented-out "# lat:" / "# lng:" lines still need
-# coordinates. Until they're filled in, the place still links in the prose,
-# tags the entry, and shows on the Places page -- it just gets no map pin
-# (map.html skips any location without both lat and lng).
+# A location needs both lat and lng to get a map pin -- map.html skips any
+# that's missing either. Without them the place still links in the prose,
+# tags the entry, and shows on the Places page.
 
 up-honeymoon-2024:
   name: Upper Peninsula
@@ -126,14 +125,14 @@ up-honeymoon-2024:
 up-lake-superior:
   name: Lake Superior
   region: Michigan, USA
-  # lat:
-  # lng:
+  lat: 47.7
+  lng: -87.5
 
 up-mackinac-bridge:
   name: Mackinac Bridge
   region: Straits of Mackinac, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8153
+  lng: -84.7281
 
 # -- Brimley / Bay Mills (Days 1-2) --
 up-brimley:
@@ -145,279 +144,279 @@ up-brimley:
 up-bay-mills:
   name: Bay Mills Resort & Casino
   region: Brimley, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.4226
+  lng: -84.6021
 
 up-cozy-inn:
   name: The Cozy Inn
   region: Brimley, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.4112
+  lng: -84.5729
 
 # -- Tahquamenon / Whitefish Point (Day 2) --
 up-tahquamenon-falls:
   name: Tahquamenon Falls
   region: Paradise, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5748
+  lng: -85.2568
 
 up-whitefish-point:
   name: Whitefish Point
   region: Paradise, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.7706
+  lng: -84.9582
 
 # -- Sault Saint Marie (Day 2) --
 up-sault-saint-marie:
   name: Sault Saint Marie
   region: Chippewa County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.4977
+  lng: -84.3477
 
 up-soo-locks:
   name: Soo Locks
   region: Sault Saint Marie, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5028
+  lng: -84.3547
 
 # -- Mackinac Island (Day 3) --
 up-st-ignace:
   name: St. Ignace
   region: Mackinac County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8687
+  lng: -84.7278
 
 up-mackinac-island:
   name: Mackinac Island
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8658
+  lng: -84.6305
 
 up-pink-pony:
   name: The Pink Pony
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8501
+  lng: -84.6172
 
 up-og-butterfly-house:
   name: The Original Butterfly House
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8504
+  lng: -84.6108
 
 up-fort-mackinac:
   name: Fort Mackinac
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8522
+  lng: -84.6174
 
 up-grand-hotel:
   name: The Grand Hotel
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.851
+  lng: -84.6262
 
 up-arch-rock:
   name: Arch Rock
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8577
+  lng: -84.6068
 
 up-patrick-doud-pub:
   name: Patrick Doud's Public House
   region: Mackinac Island, Michigan, USA
-  # lat:
-  # lng:
+  lat: 45.8503
+  lng: -84.6173
 
 # -- Travel day to Covington (Day 4) --
 up-pictured-rocks:
   name: Pictured Rocks National Lakeshore
   region: Munising, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.4955
+  lng: -86.5513
 
 up-munising:
   name: Munising
   region: Alger County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.41
+  lng: -86.6495
 
 up-tacopotamus:
   name: Tacopotamus
   region: Munising, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.41
+  lng: -86.6536
 
 up-covington:
   name: Covington
   region: Baraga County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5413
+  lng: -88.5371
 
 up-old-michigan-28:
   name: Old M-28
   region: Covington, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5545
+  lng: -88.439
 
 up-vermilac-lake-rd:
   name: Vermilac Lake Road
   region: Covington, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5443
+  lng: -88.5001
 
 up-agate-st:
   name: Agate Street
   region: Covington, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.544914
+  lng: -88.501603
 
 up-black-moth:
   name: Black Moth Cabin
   region: Covington, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.543233
+  lng: -88.502202
 
 # -- Canyon Falls (Day 6) --
 up-canyon-falls:
   name: Canyon Falls
   region: Baraga County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.6225
+  lng: -88.4765
 
 # -- Marquette (Days 5 and 7) --
 up-marquette:
   name: Marquette
   region: Marquette County, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5435
+  lng: -87.3964
 
 up-sugarloaf:
   name: Sugarloaf Mountain
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.6044
+  lng: -87.4554
 
 up-3rd-st-marquette:
   name: Third Street
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.546
+  lng: -87.3948
 
 up-iron-bay-tap-room:
   name: Iron Bay Restaurant & Tap Room
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5432
+  lng: -87.3916
 
 up-iron-ore-dock:
   name: The Iron Ore Dock
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5387
+  lng: -87.3905
 
 up-thill-sons:
   name: Thill & Sons Fish House
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5421
+  lng: -87.3906
 
 up-yoop-phoria:
   name: Yoop-Phoria
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5437
+  lng: -87.3951
 
 up-snowbound-books:
   name: Snowbound Books
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5442
+  lng: -87.3949
 
 up-downwind-marquette:
   name: Downwind Sports
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5476
+  lng: -87.3945
 
 up-trenary-toast-cafe:
   name: Trenary Toast Cafe
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5434
+  lng: -87.3952
 
 up-spice-merchant:
   name: The Spice Merchant
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5433
+  lng: -87.3932
 
 up-donckers:
   name: Donckers
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5432
+  lng: -87.3945
 
 up-yooper-casual:
   name: Yooper Casual
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5433
+  lng: -87.3934
 
 up-blossom-bird:
   name: Blossom Bird Bubble Tea
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5443
+  lng: -87.3948
 
 up-blackrocks-brewery:
   name: Blackrocks Brewery
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5469
+  lng: -87.3945
 
 up-lagniappe:
   name: Lagniappe Cajun Creole Eatery
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5433
+  lng: -87.3946
 
 up-presque-isle:
   name: Presque Isle Park
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5868
+  lng: -87.382
 
 up-traverse:
   name: The Traverse
   region: Presque Isle Park, Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.5929
+  lng: -87.3799
 
 up-wetmore-landing:
   name: Wetmore Landing
   region: Marquette, Michigan, USA
-  # lat:
-  # lng:
+  lat: 46.6151
+  lng: -87.4647
 
 # Misc Locations
 bloom-bower-oh:
-  name: Bloom Bower
+  name: Bloom & Bower
   region: Rising Sun, Ohio, USA
-  # lat:
-  # lng:
+  lat: 41.268655
+  lng: -83.398239
 
 risingsun-oh:
   name: Rising Sun
   region: Rising Sun, Ohio, USA
-  # lat:
-  # lng:
+  lat: 41.269846
+  lng: -83.42494
 
 pemberville-oh:
   name: Pemberville
   region: Pemberville, Ohio, USA
-  # lat:
-  # lng:
+  lat: 41.410906
+  lng: -83.461092
 
 attica-oh:
   name: Attica
