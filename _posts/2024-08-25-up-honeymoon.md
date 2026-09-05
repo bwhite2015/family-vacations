@@ -51,7 +51,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and my adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
@@ -77,7 +77,7 @@ Once we got into Downtown Marquette proper we walked the strip of local shops do
 
 ![Downtown Marquette selfie in front of the Iron Bay Tap Room.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240822_153215.jpg)
 
-After this, exiting The Iron Bay Tap Room, I looked up to see {% include loc.html id="up-iron-ore-dock" %}, although I didn't know what it was until I bothered to ask an employee in the nearby establishment, {% include loc.html id="up-thill-sons" %}. Before leaving Marquette, we'd purchase 2 pounds of whitefish for $24. For now, we'd hold off until we could get some ice for them. We checked out some shops and got ice cream at {% include loc.html id="up-yoop-phoria" %} before walking down to the local sports store to get an idea of potential climbing locations around the area. Along the way, we checked out the local bookstore, also on {% include loc.html id="up-3rd-st-marquette" %}, {% include loc.html id="up-snowbound-books" %}. This victorian home was converted into a grand library of purchasable works. We didn't purchase any since I was still working on Walkter Isaacson's Benjamin Franklin. 
+After this, exiting The Iron Bay Tap Room, I looked up to see {% include loc.html id="up-iron-ore-dock" %}, although I didn't know what it was until I bothered to ask an employee in the nearby establishment, {% include loc.html id="up-thill-sons" %}. Before leaving Marquette, we'd purchase 2 pounds of whitefish for $24. For now, we'd hold off until we could get some ice for them. We checked out some shops and got ice cream at {% include loc.html id="up-yoop-phoria" %} before walking down to the local sports store to get an idea of potential climbing locations around the area. Along the way, we checked out the local bookstore, also on {% include loc.html id="up-3rd-st-marquette" %}, {% include loc.html id="up-snowbound-books" %}. This victorian home was converted into a grand library of purchasable works. We didn't purchase any since I was still working on Walter Isaacson's Benjamin Franklin. 
 
 ![The Iron Ore Dock next to Thill & Sons Fish House.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240822_153457.jpg)
 

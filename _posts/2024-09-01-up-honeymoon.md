@@ -38,7 +38,7 @@ gallery:
     caption: Boone signs her code word – "}" –  signalling potential danger on the trail ahead.
   - src: /assets/images/up-honeymoon-2024/IMG_20240824_140749.jpg
     alt: Balcony inside of Blackrocks Brewery. 
-    caption: A taste of the nooks and crannies within Blackrocks Brewery.
+    caption: A taste of the "nooks and crannies" within Blackrocks Brewery.
   - src: /assets/images/up-honeymoon-2024/IMG_20240824_141001.jpg
     alt: A framed sunflower collage with other artwork on the wall for sale by the artist in Blackrocks Brewery. 
     caption: "But, do you have any tchotchkes that can fit in my cargo pockets?"
@@ -50,7 +50,7 @@ gallery:
     caption: Nursing my Super Deluxe.
   - src: /assets/images/up-honeymoon-2024/IMG_20240824_141414.jpg
     alt: The view from the top of Blackrocks Brewery, showing 3rd Street. 
-    caption: Okay, that's enough orange in my photos. Let's move on…
+    caption: View of 3rd Street from the roof of Blackrocks Brewery.
   - src: /assets/images/up-honeymoon-2024/IMG_20240824_163026.jpg
     alt: The entrance to Lagniappe Cajun Creole Eatery marked by a dungeon door. 
     caption: Dungeon with a Beholder or entrance to Lagniappe Cajun Creole Eatery?
@@ -73,7 +73,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and my adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
@@ -102,7 +102,7 @@ The jutting chunks of rock would peak up from the water, allowing for little foo
 
 ![The 'Falls' part of 'Canyon Falls' in all their glory.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_124217.jpg)
 
-On our walk, Boone got a good climbing session of her own in, hopping up 3 foot boulders and trailing around roots and branches with ease; a natural born hiker. Tilly trailed me closely, minding my steps and choice of footing. The hiking shoes I had purchased in Tahquamenon, Fitkicks, were more sock than shoe, and had gotten soaked on days prior, so I had put on the next closest thing for this hike, watershed I had bought while kayaking at my bachelor party. They may sound uncomfortable but my feet adapted to the high touch sensitivity of both options.
+On our walk, Boone got a good climbing session of her own in, hopping up 3 foot boulders and trailing around roots and branches with ease; a natural born hiker. Tilly trailed me closely, minding my steps and choice of footing. The hiking shoes I had purchased in Tahquamenon, Fitkicks, were more sock than shoe, and had gotten soaked on days prior, so I had put on the next closest thing for this hike, watershoes I had bought while kayaking at my bachelor party. They may sound uncomfortable but my feet adapted to the high touch sensitivity of both options.
 
 ![Navigating the path down from the trail into the basin at Canyon Falls, as demonstrated by Aubri and Tilly.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240823_122239.jpg)
 
@@ -118,21 +118,22 @@ Putting the card out of our minds, we started on our proposed voyage; to experie
 
 ![Our selected plant-covered nook at Blossom Bird Bubble Tea, with a great view of 3rd Street out the window.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_132658.jpg)
 
-When we entered this time, no Bill was present, however we did find a few items of note. Looking around the climbing booth, Aubri spotted a handy little book I had previously only heard about online called "A Rock Climber's Guide to Michigan's Upper Peninsula" written in part by Bill Thompson. The same Bill that provided us direction to The Traverse just 2 days prior. Bill apparently has made a name for himself in the Michigan Climbing scene, organizing the storied Michigan Ice Fest, writing guides, acting as a guide for visiting climbers, and generally helping to establish the UP climbing culture. This would later be confirmed by my local gym owner, Ben Waggoner, once I returned home. 
+When we entered this time, no Bill was present, however we did find a few items of note. Looking around the climbing booth, Aubri spotted a handy little book I had previously only heard about online called "[A Rock Climber's Guide to Michigan's Upper Peninsula](https://www.shopdownwindsports.com/products/a-rock-climbers-guide-to-michigans-upper-peninsula)
+" written, in part, by Bill Thompson. The same Bill that provided us directions to The Traverse just 2 days prior. Bill apparently has made a name for himself in the Michigan Climbing scene, organizing the storied [Michigan Ice Fest](https://michiganicefest.com/), writing guides, acting as a guide for visiting climbers, and generally helping to establish the UP climbing culture. This would later be confirmed by my local gym owner, Ben Waggoner, once I returned home. 
 
 ![Here's the entrance to Downwind Sports, complete with hiking shoe display.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_135909.jpg)
 
-So, with a fresh copy of Bill's guide and a Downwind Sports hat, I payed the counter clerk and started back on our walk, happy as ever. We'd walk a few shops on 3rd Street and eventually circled back down, past Downwind's outdoor display of approach shoes, and into a very cool brewery called {% include loc.html id="up-blackrocks-brewery" %}, a converted house, transformed into a multidecker microbrewery with a rooftop hangout, stage, merch shop, and various nooks and crannies to investigate. One of the notable discoveries of this location was a mini gallery in a hall of local artist work hanging up on display and for sale. More remarkable than the art was the method of purchasing the art: a QR code to the artist's Venmo. A crude but charming and industrious means to an end. I liked it. I got a glass of Super Deluxe, a german helles style brew that was quite crisp on the sunny day. I finished it and we made our way further down 3rd Street, eventually deciding to get food at {% include loc.html id="up-lagniappe" %}. 
+So, with a fresh copy of Bill's guide and a Downwind Sports hat, I payed the counter clerk and started back on our walk, happy as ever. We'd walk a few shops on 3rd Street and eventually circled back down, past Downwind's outdoor display of approach shoes, and into a very cool brewery called {% include loc.html id="up-blackrocks-brewery" %}, a converted house, transformed into a multidecker microbrewery with a rooftop hangout, stage, merch shop, and various nooks and crannies to investigate. One of the notable discoveries of this location was a mini gallery in a hall of local artist work hanging up on display and for sale. More remarkable than the art was the method of purchasing the art: a QR code to the artist's Venmo. A crude but charming and industrious means to an end. I liked it. I got a glass of [Super Deluxe](https://www.blackrocksbrewery.com/super-deluxe), a german helles style brew that was quite crisp on the sunny day. I finished it and we made our way further down 3rd Street, eventually deciding to get food at {% include loc.html id="up-lagniappe" %}. 
 
 ![Blackrocks Brewery has a striking presence from the street, which prompted my visit.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_133503.jpg)
 
-I got the local root beer, and a creole penne, while Aub got shrimp creole. It was pretty spice after eating it for a while and so we eventually packed the leftovers and made our way back to the SUV. We snagged some ice at the local gas station to keep the leftovers cool and went back to {% include loc.html id="up-presque-isle" %}. This time, on a Saturday afternoon, the park was packed making parking difficult. We ended up doing a lap around the park, picking up some ice cream, then doing another lap before finding a spot where we could hike back to {% include loc.html id="up-traverse" %} and I could make another attempt. 
+I got the [local root beer](https://abita.com/brew/root-beer/), and a creole penne, while Aub got shrimp creole. It was pretty spice after eating it for a while and so we eventually packed the leftovers and made our way back to the SUV. We snagged some ice at the local gas station to keep the leftovers cool and went back to {% include loc.html id="up-presque-isle" %}. This time, on a Saturday afternoon, the park was packed making parking difficult. We ended up doing a lap around the park, picking up some ice cream, then doing another lap before finding a spot where we could hike back to {% include loc.html id="up-traverse" %} and I could make another attempt. 
 
 ![Aubri looking over the Lagniappe menu, trying to decide which dish to get.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_153919.jpg)
 
 This time, however, I was too far into the day and still in recovery from prior attempts to get anywhere so we tried going to {% include loc.html id="up-wetmore-landing" %}, which we had tried to do on the previous day but found signs about parking restrictions that seemed to imply a need for a permit. After a talk with Bill, he said that we could park without too much worry from local law enforcement since he had yet to see that law enforced. So we made the trek and started hiking only to get to a beach front where college locals were taking a cold plunge, but no obvious boulders were in sight, and now with the dwindling sunlight and dogs waiting at home, it was time to call it. We started the voyage back home, got the dogs out one last time, and started packing our things for the return trip the following day. 
 
-![Vibes were high at Wetmore Landing despite loss of daylight and no boulders in my periphery.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_191316.jpg)
+![Vibes were high at Wetmore Landing despite loss of daylight and no boulders in our periphery.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240824_191316.jpg)
 
 Well, you know the rest. 9 hours of driving. That morning, Aub made a batch of coffee that we poured into her Stanley and we set off. The dogs sat in the back seat while we listened to many Joe Rogan podcasts about aliens, conspiracies, etc. Earlier on in the voyage, I had on John Denver which was pleasant as we winded through the misty forests full of fog and dew. 
 

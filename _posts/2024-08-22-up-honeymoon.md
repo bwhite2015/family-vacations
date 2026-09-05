@@ -66,7 +66,7 @@ gallery:
 #   - moab
 ---
 
-##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and I's adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
+##### *NOTE: The following blog entry – and really the entirety of this trip – was taken and digitized from a handwritten journal that had been used at the time to log Aubri and my adventures. Because of this, stylistic differences in prose and writing habits may be prominent when compared with more recent entries on this site. I've kept everything as accurate to the original entries as possible with only a few exceptions:*
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
@@ -82,7 +82,7 @@ Honeymoon - Day 5 - 8/22/24
 
 ---
 
-Waking up on Day 3 (Tues), we decided to make it a Ben and Aubri day at {% include loc.html id="up-mackinac-island" %}. We took the dogs on a walk in the morning and started the trek back south. Along the way, I told Aub to get tickets for the ferry that leaves from {% include loc.html id="up-st-ignace" %}, not Mackinac City. This was primarily to avoid paying the $4 toll again to come back over the bridge but would also prove beneficial in other ways later. 
+Waking up on Day 3 (Tues), we decided to make it a Ben and Aubri day at {% include loc.html id="up-mackinac-island" %}. We took the dogs on a walk in the morning and started the trek back south. Along the way, I told Aub to get tickets for the ferry that leaves from {% include loc.html id="up-st-ignace" %}, not Mackinaw City. This was primarily to avoid paying the $4 toll again to come back over the bridge but would also prove beneficial in other ways later. 
 
 ![View of The Grand Hotel on our voyage over to Mackinac Island.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240820_104811.jpg)
 
@@ -102,9 +102,9 @@ Once that was done, we walked all the way to the {% include loc.html id="up-gran
 
 ![Arch Rock framing Lake Huron's waters in the distance.]({{ site.baseurl }}/assets/images/up-honeymoon-2024/IMG_20240820_162300.jpg)
 
-Upon returning to the point city, we got a bite at {% include loc.html id="up-patrick-doud-pub" %}. Not bad food at all but not crazy good, we scarfed it down and got to the pier. Oh yeah, and one loose end I forgot to tie up: On our way down from the fort, we did in fact, see a motorized vehicle, the exception to the 'No cars' rule mentioned earlier. There was an obvious reason for this exception; that it was an ambulance. It seems that taking a horsedrawn carriage to the hospital only to die on arrival was an irony that no one wants to fall victim to. So "No motorized vehicles"* with fine print… Also, back to the pier, we found a line stretching out past the entrance and down the street a football field in length. This was not good. As we made our way to the back of the line, Aubri questioned why the line could be so long when there were only limited trips left in the day to get back to shore. Here comes "St. Ignace" again. Someone in the same situation as us asked a person in line what the line was for and they confirmed it was the <u>Mackinac City</u> line; not the line for St Ignace. Thankfully that line was much shorter. So, we got into the correct line, thankful we were paying attention (Aubri was paying attention) and got our ride back. 
+Upon returning to the point city, we got a bite at {% include loc.html id="up-patrick-doud-pub" %}. Not bad food at all but not crazy good, we scarfed it down and got to the pier. Oh yeah, and one loose end I forgot to tie up: On our way down from the fort, we did in fact, see a motorized vehicle, the exception to the 'No cars' rule mentioned earlier. There was an obvious reason for this exception; that it was an ambulance. It seems that taking a horsedrawn carriage to the hospital only to die on arrival was an irony that no one wants to fall victim to. So "No motorized vehicles"* with fine print… Also, back to the pier, we found a line stretching out past the entrance and down the street a football field in length. This was not good. As we made our way to the back of the line, Aubri questioned why the line could be so long when there were only limited trips left in the day to get back to shore. Here comes "St. Ignace" again. Someone in the same situation as us asked a person in line what the line was for and they confirmed it was the <u>Mackinaw City</u> line; not the line for St Ignace. Thankfully that line was much shorter. So, we got into the correct line, thankful we were paying attention (Aubri was paying attention) and got our ride back. 
 
-##### *One Note: The ship back to Mackinac City looked about twice as large as the ship back to St. Ignace, likely to accommodate the larger number of passengers.*
+##### *One Note: The ship back to Mackinaw City looked about twice as large as the ship back to St. Ignace, likely to accommodate the larger number of passengers.*
 
 Either way, we were happy to be on our way without unwanted delay. We made it back home after about an hour drive. 
 
