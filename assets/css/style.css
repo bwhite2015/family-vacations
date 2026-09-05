@@ -370,19 +370,37 @@ a:hover { text-decoration-thickness: 2px; }
 .lightbox__btn:active { transform: scale(.94); }
 .lightbox__btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
-.lightbox__close { top: 1rem; right: 1.25rem; font-size: 1.6rem; }
+.lightbox__close { top: 1rem; right: 1.25rem; }
 .lightbox__prev,
-.lightbox__next { top: 50%; transform: translateY(-50%); font-size: 2rem; }
+.lightbox__next { top: 50%; transform: translateY(-50%); }
 .lightbox__prev:active,
 .lightbox__next:active { transform: translateY(-50%) scale(.94); }
-.lightbox__prev { left: 1rem; padding-right: .15em; }   /* optically centre the chevron */
-.lightbox__next { right: 1rem; padding-left: .15em; }
+.lightbox__prev { left: 1rem; }
+.lightbox__next { right: 1rem; }
+
+/* The marks are drawn rather than typed. Centring a glyph like × or ‹ centres
+   the line box it sits in, not the mark itself, and a font's ascent dwarfs its
+   descent — so the mark lands a few pixels below the middle of the circle, by
+   an amount that changes with whichever system font the reader happens to
+   have. These paths are symmetric within the viewBox, so they land dead
+   centre everywhere. */
+.lightbox__btn svg {
+  display: block;
+  width: 1.3rem; height: 1.3rem;
+  fill: none; stroke: currentColor;
+  stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round;
+}
+.lightbox__prev svg,
+.lightbox__next svg { width: 1.55rem; height: 1.55rem; }
 
 /* On a phone the arrows sit over the photo's edges, so keep them out of the
    way and let a swipe do most of the work. */
 @media (max-width: 560px) {
   .lightbox { padding: 3.5rem .75rem 1rem; }
   .lightbox__btn { width: 2.4rem; height: 2.4rem; }
+  .lightbox__btn svg { width: 1.15rem; height: 1.15rem; }   /* the circles shrink, so the marks do too */
+  .lightbox__prev svg,
+  .lightbox__next svg { width: 1.35rem; height: 1.35rem; }
   .lightbox__prev { left: .4rem; }
   .lightbox__next { right: .4rem; }
   .lightbox__img { max-height: calc(100vh - 12rem); }

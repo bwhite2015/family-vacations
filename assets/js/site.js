@@ -75,6 +75,14 @@
     var lastFocus = null;
     var overlay, imgEl, capEl, countEl, closeBtn, prevBtn, nextBtn;
 
+    // Each path is drawn symmetrically about the middle of the 24×24 box, so
+    // the mark sits in the centre of its circle whatever font is around. The
+    // button carries the label; the drawing itself is nothing to read out.
+    function icon(path) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+             '<path d="' + path + '"/></svg>';
+    }
+
     function build() {
       overlay = document.createElement('div');
       overlay.className = 'lightbox';
@@ -84,9 +92,12 @@
       overlay.setAttribute('aria-label', 'Photo viewer');
       overlay.innerHTML =
         '<p class="lightbox__count" aria-hidden="true"></p>' +
-        '<button class="lightbox__btn lightbox__close" type="button" aria-label="Close photo (Esc)">×</button>' +
-        '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous photo">‹</button>' +
-        '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo">›</button>' +
+        '<button class="lightbox__btn lightbox__close" type="button" aria-label="Close photo (Esc)">' +
+          icon('M6 6 18 18M18 6 6 18') + '</button>' +
+        '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous photo">' +
+          icon('M15.5 5 8.5 12l7 7') + '</button>' +
+        '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo">' +
+          icon('M8.5 5 15.5 12l-7 7') + '</button>' +
         '<figure class="lightbox__figure">' +
           '<img class="lightbox__img" alt="">' +
           '<figcaption class="lightbox__caption"></figcaption>' +
