@@ -252,6 +252,17 @@ sequence in that order, so the arrows on either side (or the arrow keys, or a
 swipe on a phone) step through the whole entry's photos without closing. Esc
 closes it. There's nothing to switch on; it applies to any photo you add.
 
+**Panoramas open as a strip you pan across.** Shown whole, a panorama would be
+a ribbon a few pixels tall, so one opens at full height and you drag it
+sideways instead — with the mouse, a scroll wheel, a finger, or the arrow keys
+once you've tabbed to it. The arrow buttons still move to the next photo.
+
+This is automatic: any photo more than two and a half times wider than it is
+tall is treated as a panorama. Ordinary photos, even wide ones, are nowhere
+near that — so just add a panorama like any other photo and it will work. If
+one you expect to pan doesn't, it isn't wide enough to qualify, and the fix is
+to crop off the sky and ground rather than to change any setting.
+
 ---
 
 ## Fixing a mistake

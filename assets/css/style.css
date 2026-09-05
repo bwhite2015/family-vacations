@@ -342,6 +342,45 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .lightbox__img.is-ready { opacity: 1; }
 
+/* A panorama shown whole is a useless thin ribbon — four or five times wider
+   than it is tall. So it's given the full height instead and overflows into a
+   strip the reader pans across, by dragging, scrolling, or with the arrow keys
+   once the strip has focus. site.js decides which photos qualify by their
+   shape and sets .is-pano. */
+.lightbox__stage { max-width: 100%; }
+.lightbox.is-pano .lightbox__figure { width: 100%; }
+.lightbox.is-pano .lightbox__stage {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .9);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, .35) transparent;
+}
+.lightbox.is-pano .lightbox__stage:active { cursor: grabbing; }
+
+/* The strip runs the full width, so the arrows would otherwise sit on top of
+   the panorama and cover the very edges you want to drag. Give them a gutter
+   of their own wherever there's room for one. */
+@media (min-width: 561px) {
+  .lightbox.is-pano { padding-left: 5.25rem; padding-right: 5.25rem; }
+}
+.lightbox.is-pano .lightbox__img {
+  max-width: none; max-height: none;
+  width: auto;
+  height: min(calc(100vh - 13rem), 62vh);
+  border-radius: 0;
+  box-shadow: none;
+  user-select: none; -webkit-user-drag: none;
+}
+
+.lightbox__hint {
+  position: absolute; top: 1.15rem; left: 50%; transform: translateX(-50%);
+  margin: 0; font-size: .8rem; color: rgba(255, 255, 255, .5);
+}
+
 .lightbox__caption {
   max-width: 60ch; text-align: center;
   font-family: var(--font); font-size: .9rem; line-height: 1.5;
@@ -404,6 +443,10 @@ a:hover { text-decoration-thickness: 2px; }
   .lightbox__prev { left: .4rem; }
   .lightbox__next { right: .4rem; }
   .lightbox__img { max-height: calc(100vh - 12rem); }
+  /* Full height on a narrow screen would leave a panorama six screens long to
+     drag through. Shorter shows more of it at once. */
+  .lightbox.is-pano .lightbox__img { height: min(calc(100vh - 14rem), 40vh); }
+  .lightbox__hint { font-size: .75rem; }
 }
 
 /* -------------------------------------------------------------------- page */

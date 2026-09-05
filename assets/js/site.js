@@ -71,9 +71,15 @@
     );
     if (!shots.length) return;
 
+    // Anything this wide is a panorama rather than a photo that happens to be
+    // wide — the widest ordinary shot on the site is about 2:1, panoramas run
+    // past 4:1. Shown whole one would be a thin strip, so it gets panned
+    // across instead.
+    var PANO_RATIO = 2.5;
+
     var index = 0;
     var lastFocus = null;
-    var overlay, imgEl, capEl, countEl, closeBtn, prevBtn, nextBtn;
+    var overlay, imgEl, stage, hintEl, capEl, countEl, closeBtn, prevBtn, nextBtn;
 
     // Each path is drawn symmetrically about the middle of the 24×24 box, so
     // the mark sits in the centre of its circle whatever font is around. The
@@ -98,13 +104,16 @@
           icon('M15.5 5 8.5 12l7 7') + '</button>' +
         '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo">' +
           icon('M8.5 5 15.5 12l-7 7') + '</button>' +
+        '<p class="lightbox__hint" hidden>Drag to pan across the photo</p>' +
         '<figure class="lightbox__figure">' +
-          '<img class="lightbox__img" alt="">' +
+          '<div class="lightbox__stage" role="group"><img class="lightbox__img" alt=""></div>' +
           '<figcaption class="lightbox__caption"></figcaption>' +
         '</figure>';
       document.body.appendChild(overlay);
 
       imgEl = overlay.querySelector('.lightbox__img');
+      stage = overlay.querySelector('.lightbox__stage');
+      hintEl = overlay.querySelector('.lightbox__hint');
       capEl = overlay.querySelector('.lightbox__caption');
       countEl = overlay.querySelector('.lightbox__count');
       closeBtn = overlay.querySelector('.lightbox__close');
@@ -123,12 +132,47 @@
 
       // Anywhere in the dark closes — but not the photo, its caption, or a button.
       overlay.addEventListener('click', function (e) {
-        if (e.target.closest('.lightbox__img, .lightbox__caption, .lightbox__btn')) return;
+        if (e.target.closest('.lightbox__img, .lightbox__caption, .lightbox__btn, .lightbox__hint')) return;
+        // The panorama's strip runs the full width, so a click on it is aimed
+        // at the photo even where the photo doesn't reach.
+        if (isPano() && e.target.closest('.lightbox__stage')) return;
         close();
       });
 
-      imgEl.addEventListener('load', function () { imgEl.classList.add('is-ready'); });
+      imgEl.addEventListener('load', function () {
+        imgEl.classList.add('is-ready');
+        setPano(imgEl.naturalWidth / imgEl.naturalHeight >= PANO_RATIO);
+      });
       imgEl.addEventListener('error', function () { imgEl.classList.add('is-ready'); });
+
+      // Drag the panorama with a mouse. Touch is left to the browser, which
+      // already scrolls the strip and does it with the right momentum.
+      var dragging = false, grabX = 0, grabScroll = 0;
+      stage.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse' || !isPano()) return;
+        dragging = true;
+        grabX = e.clientX;
+        grabScroll = stage.scrollLeft;
+        stage.setPointerCapture(e.pointerId);
+        e.preventDefault();   // otherwise the browser starts dragging the image itself
+      });
+      stage.addEventListener('pointermove', function (e) {
+        if (dragging) stage.scrollLeft = grabScroll - (e.clientX - grabX);
+      });
+      ['pointerup', 'pointercancel'].forEach(function (type) {
+        stage.addEventListener(type, function (e) {
+          if (!dragging) return;
+          dragging = false;
+          if (stage.hasPointerCapture(e.pointerId)) stage.releasePointerCapture(e.pointerId);
+        });
+      });
+
+      // A plain wheel or a two-finger swipe reads as "move along the photo".
+      stage.addEventListener('wheel', function (e) {
+        if (!isPano() || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+        stage.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }, { passive: false });
 
       // Swipe sideways on a phone. A mostly-vertical drag is a scroll attempt,
       // not a page turn, so it is left alone.
@@ -141,8 +185,27 @@
         var dx = e.changedTouches[0].clientX - startX;
         var dy = e.changedTouches[0].clientY - startY;
         if (shots.length < 2 || Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+        // On a panorama a sideways drag means "pan", so it can't also mean
+        // "next photo" — the arrows are there for that.
+        if (isPano()) return;
         show(index + (dx < 0 ? 1 : -1));
       }, { passive: true });
+    }
+
+    function isPano() { return overlay.classList.contains('is-pano'); }
+
+    function setPano(on) {
+      overlay.classList.toggle('is-pano', on);
+      hintEl.hidden = !on;
+      // Focusable so the strip can be panned with the arrow keys, which the
+      // browser scrolls for us — see onKey, which steps out of the way.
+      if (on) {
+        stage.setAttribute('tabindex', '0');
+        stage.setAttribute('aria-label', 'Panorama — scroll sideways to pan across it');
+      } else {
+        stage.removeAttribute('tabindex');
+        stage.removeAttribute('aria-label');
+      }
     }
 
     function preload(i) {
@@ -155,6 +218,10 @@
       var shot = shots[index];
 
       imgEl.classList.remove('is-ready');
+      // Whether this one pans is only known once it has loaded and its shape
+      // is readable; until then treat it as an ordinary photo.
+      setPano(false);
+      stage.scrollLeft = 0;
       imgEl.src = shot.src;
       imgEl.alt = shot.caption;
       capEl.textContent = shot.caption;
@@ -193,6 +260,9 @@
       if (e.key === 'Escape') { close(); return; }
 
       if (shots.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+        // With the panorama strip itself focused the arrows pan it, which the
+        // browser does natively — so leave them alone.
+        if (isPano() && document.activeElement === stage) return;
         e.preventDefault();
         show(index + (e.key === 'ArrowRight' ? 1 : -1));
         return;
@@ -201,7 +271,9 @@
       if (e.key !== 'Tab') return;
 
       // Keep Tab inside the overlay — the page behind it can't be reached anyway.
-      var stops = shots.length > 1 ? [closeBtn, prevBtn, nextBtn] : [closeBtn];
+      var stops = [closeBtn];
+      if (shots.length > 1) stops.push(prevBtn, nextBtn);
+      if (isPano()) stops.push(stage);   // so the panorama can be reached and panned
       var at = stops.indexOf(document.activeElement);
       e.preventDefault();
       stops[(at + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
