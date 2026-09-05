@@ -55,7 +55,7 @@ gallery:
 
 - *I've added paragraph breaks to help ease eye strain.*
 - *I've added images in between paragraphs as visual aids.*
-- *I've adjusted common shorthand like  "+" to instead spell out the proper word, like "and" since there is ample room here (unlike in a 2" by 3" notebook).*
+- *I've adjusted common shorthand like  "+" to instead spell out the proper word, like "and" since there is ample room here (unlike in a 3" by 6" notebook).*
 
 
 
