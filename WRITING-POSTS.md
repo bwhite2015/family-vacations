@@ -246,6 +246,12 @@ it as one — a sentence a reader would want, not a bare description. It doubles
 as the alt text for anyone using a screen reader. A photo you'd rather leave
 uncaptioned just gets empty brackets: `![]({{ site.baseurl }}/...)`.
 
+**Every photo in an entry opens full size when it's clicked** — the one at the
+top, the ones in the text, and the gallery at the bottom. They open in one
+sequence in that order, so the arrows on either side (or the arrow keys, or a
+swipe on a phone) step through the whole entry's photos without closing. Esc
+closes it. There's nothing to switch on; it applies to any photo you add.
+
 ---
 
 ## Fixing a mistake

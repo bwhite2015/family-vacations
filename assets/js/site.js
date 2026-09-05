@@ -42,6 +42,183 @@
     }
   );
 
+  /* ---------------------------------------------------------- lightbox --- */
+  // Every photo in an entry — the one at the top, the ones between the
+  // paragraphs, and the gallery at the bottom — opens in an overlay on top of
+  // the page instead of sending the reader off to the raw image file. The
+  // gallery keeps its <a> wrappers in the markup so the photos are still
+  // reachable with JavaScript off; the click is intercepted here.
+  (function () {
+    var post = document.querySelector('.post');
+    if (!post) return;
+
+    // A comma selector returns document order, so the sequence runs
+    // hero → prose → gallery: the order the photos are met while reading.
+    var shots = Array.prototype.map.call(
+      post.querySelectorAll('.post__hero img, .post__body img, .gallery img'),
+      function (img) {
+        // The gallery wraps each thumbnail in a link to the full file, and the
+        // thumbnail itself is cropped to 4:3 by CSS — so prefer the href.
+        var link = img.parentNode.tagName === 'A' ? img.parentNode : null;
+        var figure = img.closest('figure');
+        var cap = figure && figure.querySelector('figcaption');
+        return {
+          src: (link && link.getAttribute('href')) || img.getAttribute('src'),
+          caption: cap ? (cap.textContent || '').trim() : (img.getAttribute('alt') || '').trim(),
+          trigger: link || img
+        };
+      }
+    );
+    if (!shots.length) return;
+
+    var index = 0;
+    var lastFocus = null;
+    var overlay, imgEl, capEl, countEl, closeBtn, prevBtn, nextBtn;
+
+    function build() {
+      overlay = document.createElement('div');
+      overlay.className = 'lightbox';
+      overlay.hidden = true;
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', 'Photo viewer');
+      overlay.innerHTML =
+        '<p class="lightbox__count" aria-hidden="true"></p>' +
+        '<button class="lightbox__btn lightbox__close" type="button" aria-label="Close photo (Esc)">×</button>' +
+        '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous photo">‹</button>' +
+        '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo">›</button>' +
+        '<figure class="lightbox__figure">' +
+          '<img class="lightbox__img" alt="">' +
+          '<figcaption class="lightbox__caption"></figcaption>' +
+        '</figure>';
+      document.body.appendChild(overlay);
+
+      imgEl = overlay.querySelector('.lightbox__img');
+      capEl = overlay.querySelector('.lightbox__caption');
+      countEl = overlay.querySelector('.lightbox__count');
+      closeBtn = overlay.querySelector('.lightbox__close');
+      prevBtn = overlay.querySelector('.lightbox__prev');
+      nextBtn = overlay.querySelector('.lightbox__next');
+
+      // A lone photo has nowhere to step to.
+      if (shots.length < 2) {
+        prevBtn.hidden = true;
+        nextBtn.hidden = true;
+      }
+
+      prevBtn.addEventListener('click', function () { show(index - 1); });
+      nextBtn.addEventListener('click', function () { show(index + 1); });
+      closeBtn.addEventListener('click', close);
+
+      // Anywhere in the dark closes — but not the photo, its caption, or a button.
+      overlay.addEventListener('click', function (e) {
+        if (e.target.closest('.lightbox__img, .lightbox__caption, .lightbox__btn')) return;
+        close();
+      });
+
+      imgEl.addEventListener('load', function () { imgEl.classList.add('is-ready'); });
+      imgEl.addEventListener('error', function () { imgEl.classList.add('is-ready'); });
+
+      // Swipe sideways on a phone. A mostly-vertical drag is a scroll attempt,
+      // not a page turn, so it is left alone.
+      var startX = 0, startY = 0;
+      overlay.addEventListener('touchstart', function (e) {
+        startX = e.changedTouches[0].clientX;
+        startY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      overlay.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - startX;
+        var dy = e.changedTouches[0].clientY - startY;
+        if (shots.length < 2 || Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+        show(index + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+    }
+
+    function preload(i) {
+      var shot = shots[(i + shots.length) % shots.length];
+      if (shot) new Image().src = shot.src;
+    }
+
+    function show(i) {
+      index = (i + shots.length) % shots.length;   // the ends wrap around
+      var shot = shots[index];
+
+      imgEl.classList.remove('is-ready');
+      imgEl.src = shot.src;
+      imgEl.alt = shot.caption;
+      capEl.textContent = shot.caption;
+      capEl.hidden = !shot.caption;
+      countEl.textContent = shots.length > 1 ? (index + 1) + ' / ' + shots.length : '';
+
+      if (shots.length > 1) { preload(index + 1); preload(index - 1); }
+    }
+
+    function open(i) {
+      if (!overlay) build();
+      lastFocus = document.activeElement;
+
+      // Holding the page still costs it its scrollbar; pay the width back so
+      // the sticky header doesn't jump sideways underneath.
+      var gap = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (gap > 0) document.body.style.paddingRight = gap + 'px';
+
+      show(i);
+      overlay.hidden = false;
+      closeBtn.focus();
+      document.addEventListener('keydown', onKey);
+    }
+
+    function close() {
+      overlay.hidden = true;
+      imgEl.removeAttribute('src');
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      document.removeEventListener('keydown', onKey);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function onKey(e) {
+      if (e.key === 'Escape') { close(); return; }
+
+      if (shots.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+        e.preventDefault();
+        show(index + (e.key === 'ArrowRight' ? 1 : -1));
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+
+      // Keep Tab inside the overlay — the page behind it can't be reached anyway.
+      var stops = shots.length > 1 ? [closeBtn, prevBtn, nextBtn] : [closeBtn];
+      var at = stops.indexOf(document.activeElement);
+      e.preventDefault();
+      stops[(at + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
+    }
+
+    shots.forEach(function (shot, i) {
+      var trigger = shot.trigger;
+      trigger.classList.add('is-zoomable');
+
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();   // the gallery's link to the raw file stays a no-JS fallback
+        open(i);
+      });
+
+      // The gallery's triggers are links and already answer to a keyboard; a
+      // bare <img> has to be told it's something you can press.
+      if (trigger.tagName !== 'A') {
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('tabindex', '0');
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          e.preventDefault();
+          open(i);
+        });
+      }
+    });
+  })();
+
   /* ------------------------------------------------------------ filters --- */
   var list = document.getElementById('post-list');
   if (!list) return;
